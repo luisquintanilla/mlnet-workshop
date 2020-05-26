@@ -28,7 +28,6 @@ namespace Web.Pages
         [BindProperty]
         public int CarModelDetailId { get; set; }
 
-
         public SelectList CarYearSL { get; } = new  SelectList(Enumerable.Range(1930, (DateTime.Today.Year-1929)).Reverse());
         public SelectList CarMakeSL { get; }
 
@@ -46,7 +45,7 @@ namespace Web.Pages
 
         public void OnPost()
         {
-            var selectedMakeModel = _carModelDetails.Where(x => CarModelDetailId == x.Id).FirstOrDefault();
+            var selectedMakeModel = _carModelService.Where(x => CarModelDetailId == x.Id).FirstOrDefault();
 
             CarInfo.Make = selectedMakeModel.Make;
             CarInfo.Model = selectedMakeModel.Model;
