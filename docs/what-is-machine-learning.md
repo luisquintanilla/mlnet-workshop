@@ -9,7 +9,7 @@ In other words, artificial intelligence is machines imitating human abilities an
 Typically, artificial intelligence started as rule-based systems; however, using traditional AI techniques are difficult to scale because you can't model behavior with a bunch of "if statements".
   
 Examples of artificial intelligence include self-driving cars and robo-readers for grading essays.
-  
+
 ![futuristic car](https://user-images.githubusercontent.com/782127/83189340-135a2180-a0ff-11ea-8d79-f36151922f0c.png)
 
 Within AI, there are a variety of subsets, including machine learning. Machine learning is getting computers to make predictions without being explicitly programmed. Instead, computers find patterns in data and learn from experience in order to act on new data.
