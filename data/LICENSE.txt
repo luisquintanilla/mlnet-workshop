@@ -1,0 +1,3 @@
+The dataset comes from the 1.2 Million Used Car Listings dataset. https://www.kaggle.com/jpayne/852k-used-car-listings#true_car_listings.csv
+
+This dataset is licensed under CC0: Public Domain https://creativecommons.org/publicdomain/zero/1.0/

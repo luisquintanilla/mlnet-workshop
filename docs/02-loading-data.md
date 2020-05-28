@@ -10,7 +10,7 @@ Data in ML.NET is represented as an `IDataView`. An IDataView is a flexible and 
 
 Something else that the `IDataView` component provides is a `DataViewSchema`. As the name suggest, this is the schema of an `IDataView` which defines the types, names, and other annotations for the set of columns that make up an `IDataView`. Before loading data, you must define the schema of that data. You can use classes or Plain-Old-CLR-Objects (POCO) to define a `DataViewSchema`.
 
-ML<i></i>.NET provides support for loading data into an `IDataView` from various sources:
+ML.NET provides support for loading data into an `IDataView` from various sources:
 
 - *Files* - Load data from sources like text, binary, and image files. You can load data from a single file or multiple files. The supported formats include
 - *Databases* - Load data from relational database sources. The following databases are a few of the databases supported:
