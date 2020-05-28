@@ -16,7 +16,7 @@ Within AI, there are a variety of subsets, including machine learning. Machine l
 
 Machine learning is used to solve problems that are difficult (or impossible) to solve with rules-based programming. For instance, if you were asked to write a function that predicts the price of a shirt based on the description of the shirt, you might start by looking at keywords such as "long sleeves" and "business casual." However, as the list of shirt features grows, you might not know how to build a function to scale that.
 
-![rules-data-answers](https://user-images.githubusercontent.com/782127/83189403-19500280-a0ff-11ea-898e-15ecbb48aadd.png)
+![rules-data-answers](https://user-images.githubusercontent.com/10437687/83196461-cc652f80-a0f0-11ea-9930-30cbe4b35b3f.png)
 
 To go even further, deep learning is a subset of machine learning based on artificial neural networks which imitates the way the human brain learns, thinks, and processes data. It’s called deep learning because the neural networks form many layers; for instance, Deep Neural Networks (DNNs) are comprised of a network of layers of nodes in which each layer performs a complex operation. Deep learning is used for a variety of scenarios, including image classification, object detection, speech recognition, and natural language processing.
 
@@ -24,7 +24,7 @@ To go even further, deep learning is a subset of machine learning based on artif
 
 Here’s how it all fits together:
 
-![ai-ml-deep-learning](https://user-images.githubusercontent.com/782127/83189499-22d96a80-a0ff-11ea-92be-4e12a8e5adfe.png)
+![ai-ml-deep-learning](https://user-images.githubusercontent.com/10437687/83196387-a9d31680-a0f0-11ea-9870-ffc1b2c8b215.png)
 
 ## What problems can you solve with Machine Learning?
 
