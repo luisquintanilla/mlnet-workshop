@@ -26,11 +26,11 @@ See [Load data from files and other sources](https://docs.microsoft.com/dotnet/m
 
 ## Get the data
 
-First you need to download the data:
+Normally, you would need to download the data and, if necessary, extract or unzip it to a directory on your computer. For this lab, you already have the data in the `data` directory in this repository.
 
-[1.2 Million Used Car Listings](https://github.com/luisquintanilla/mlnet-workshop/raw/master/data/true_car_listings.csv) (right-click, Save As and store it in your working folder for the lab)
+[View Data Online - 1.2 Million Used Car Listings](https://github.com/luisquintanilla/mlnet-workshop/raw/master/data/true_car_listings.csv)
 
-You can open it and inspect its contents. It should look something like this:
+You can open and inspect the CSV file's contents using a tool like Excel:
 
 ![Used car sale data in CSV format](https://user-images.githubusercontent.com/782127/82711417-575aab80-9c53-11ea-9270-459fb5e79441.png)
 
@@ -80,13 +80,13 @@ Now open up *Program.cs* file in the `TrainConsole` project (**not** the web pro
 using Shared;
 ```
 
-Inside of the class definition, add the location of the file wherever you saved it as a static string:
+Inside of the class definition, add the location of the file, which will depend on where you cloned or downloaded this repo (it's in `data/true_car_listings.csv` in the repository's folder).:
 
 ```csharp
 class Program
 {
     // update this with your file's path where you saved it
-    private static string TRAIN_DATA_FILEPATH = @"C:\Dev\true_car_listings.csv";
+    private static string TRAIN_DATA_FILEPATH = @"C:\Dev\mlnet-workshop\data\true_car_listings.csv";
 
     //...
 }
