@@ -39,7 +39,7 @@ var dataProcessPipeline =
 
 The above code first encodes the Make and Model columns using `OneHotEncoding`. It then concatenates the encoded Year, Make, and Model, as well as Mileage, into a Features column. Finally, it normalizes the Features values using a `MinMax` transform that results in a linear range from 0 to 1, with the min value at 0 and the max at 1.
 
-Finally, since ML<i>.NET doesn't perform any caching automatically, the resulting values are cached in preparation for running the training. Caching can help improve training time since data doesn't have to continuously be loaded from disk. Keep in mind though, only cache when the dataset can fit into memory.
+Finally, since ML.NET doesn't perform any caching automatically, the resulting values are cached in preparation for running the training. Caching can help improve training time since data doesn't have to continuously be loaded from disk. Keep in mind though, only cache when the dataset can fit into memory.
 
 ## Add Algorithms
 
@@ -51,7 +51,7 @@ var trainer = mlContext.Regression.Trainers.LbfgsPoissonRegression();
 var trainingPipeline = dataProcessPipeline.Append(trainer);
 ```
 
-This code sets up an instance of the trainer using a linear regression model, `LbfgsPoissonRegression`. Learn about the different [algorithms](https://docs.microsoft.com/dotnet/machine-learning/how-to-choose-an-ml-net-algorithm) in ML</i>.NET
+This code sets up an instance of the trainer using a linear regression model, `LbfgsPoissonRegression`. Learn about the different [algorithms](https://docs.microsoft.com/dotnet/machine-learning/how-to-choose-an-ml-net-algorithm) in ML.NET
 
 ## Train the model
 
