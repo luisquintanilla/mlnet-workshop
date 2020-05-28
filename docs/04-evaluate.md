@@ -53,6 +53,12 @@ Cross validation is a training and evaluation technique. It folds or splits the 
 
 To train and evaluate a model with cross validation, use the `CrossValidate` method for the respective task.
 
+Start by adding the following `using` statement to the top of the *Program.cs* file.
+
+```csharp
+using System.Linq;
+```
+
 ```csharp
 var crossValidationResults = mlContext.Regression.CrossValidate(trainingData, trainingPipeline, numberOfFolds: 5);
 var avgRSquared = crossValidationResults.Select(model => model.Metrics.RSquared).Average();
