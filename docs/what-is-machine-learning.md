@@ -164,7 +164,7 @@ Custom models are models that are trained on your own data.
 
 Now that you've got the basic terminology down, here's the general steps and workflow for machine learning:
 
-![prepare build train run](https://user-images.githubusercontent.com/782127/83190876-2110a680-a101-11ea-8846-34f544027675.png)
+![prepare build train run](https://user-images.githubusercontent.com/10437687/83197121-d20f4500-a0f1-11ea-8c63-80c9baa54d31.png)
 
 ### Prepare your data
 
