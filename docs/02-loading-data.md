@@ -85,7 +85,7 @@ Inside of the class definition, add the location of the file wherever you saved 
 ```csharp
 class Program
 {
-    // update this with your file's path where you unzipped it
+    // update this with your file's path where you saved it
     private static string TRAIN_DATA_FILEPATH = @"C:\Dev\true_car_listings.csv";
 
     //...
