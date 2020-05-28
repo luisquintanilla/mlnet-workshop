@@ -8,7 +8,7 @@ One of the advantages of ML<i>.NET is you have different deployment targets. Per
 
 Install the `Microsoft.Extensions.ML` NuGet package to the `Web` project. Make sure to select version **1.4.0**.
 
-![Install Microsoft.Extensions.ML NuGet package](./install-microsoftextensionsml-nuget.png)
+![Install Microsoft.Extensions.ML NuGet package](./media/install-microsoftextensionsml-nuget.png)
 
 Alternatively, you can use the dotnet cli
 
@@ -63,6 +63,18 @@ Inside the class, define a private readonly variable for the `PredictionEnginePo
 
 ```csharp
 private readonly PredictionEnginePool<ModelInput, ModelOutput> _predictionEnginePool;
+```
+
+Then, inject the `PredictionEnginePool` service into the `Index` constructor.
+
+```csharp
+public IndexModel(ILogger<IndexModel> logger, ICarModelService carFileModelService, PredictionEnginePool<ModelInput,ModelOutput> predictionEnginePool)
+{
+    _logger = logger;
+    _carModelService = carFileModelService.GetDetails();
+    CarMakeSL = new SelectList(_carModelService, "Id", "Model", default, "Make");
+    _predictionEnginePool = predictionEnginePool;
+}
 ```
 
 Finally, replace the implementation of the `OnPost` method with the following.
