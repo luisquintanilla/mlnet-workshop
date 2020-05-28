@@ -2,18 +2,26 @@
 
 Welcome to the ML.NET Workshop!
 
-ML.NET is an open source, cross-platform, machine learning framework for .NET developers. You can use ML.NET to create custom machine learning models without having prior machine learning experience and without leaving the .NET ecosystem.
+[ML.NET](https://dot.net/ml) is an open source, cross-platform, machine learning framework for .NET developers. You can use ML.NET to create custom machine learning models without having prior machine learning experience and without leaving the .NET ecosystem.
 
 In this workshop, we will build, train, and consume a machine learning model that predicts the price of used cars based on factors such as car make, model, and mileage. We will learn about the basics of machine learning, the various ML.NET framework features and tooling, and how to easily get started with ML.NET.
 
 ![Used Car Price](docs/media/consume-model.png)
+
+## Project Structure
+
+This app is made up of three projects:
+
+1. **Shared**: .NET Standard library that has shared code
+2. **TrainConsole**: .NET Core console app for training the model
+3. **Web**: ASP.NET Core Razor Pages app that uses the model to predict car prices
 
 
 ## Getting Started
 
 Go ahead and clone this repo to your machine, then dive in and [get started](/docs/00-get-started.md)!
 
-## Sessions
+## Phases
 
 | Phase | Topics |
 | ----- | ---- |
