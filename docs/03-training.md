@@ -16,6 +16,8 @@ The goal of a machine learning model is to identify patterns within training dat
 
 Use the `TrainTestSplit` method to split the data into train and test sets. The result will be a `TrainTestData` object which contains two `IDataView` members, one for the train set and the other for the test set. The data split percentage is determined by the `testFraction` parameter. The snippet below is holding out 20 percent of the original data for the test set.
 
+Add this to `Program.cs` in the TrainConsole project after the other code we've written so far:
+
 ```csharp
 // Split the data into a train and test set
 var trainTestSplit = mlContext.Data.TrainTestSplit(trainingData, testFraction: 0.2);
