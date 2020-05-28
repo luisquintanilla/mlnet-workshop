@@ -8,7 +8,7 @@ At the top of the *Program.cs* class, define the path of where you want your mod
 private static string MODEL_FILEPATH = @"C:\Dev\MLModel.zip";
 ```
 
-Then, inside the `Main` method, add the following code below the evaluation section
+Then, inside the `Main` method, add the following code at the bottom of the `Main` method:
 
 ```csharp
 // Save model
