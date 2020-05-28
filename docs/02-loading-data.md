@@ -74,7 +74,7 @@ public class ModelInput
 
 ## Load the data from the file into an IDataView
 
-Now open up *Program.cs* file in the `TrainConsole` project and add the following `using` statement:
+Now open up *Program.cs* file in the `TrainConsole` project (**not** the web project!) and add the following `using` statement:
 
 ```csharp
 using Shared;
