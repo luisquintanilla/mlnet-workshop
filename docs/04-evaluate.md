@@ -16,6 +16,7 @@ Learn more about [model evaluation metrics](https://docs.microsoft.com/dotnet/ma
 To get the evaluation metrics for the model, start out by using the model to make predictions with the `Transform` method. In the `Main` method of the *Program.cs* file of the `TrainConsole` project, add the following code below `model`.
 
 ```csharp
+// Make predictions on train and test sets
 IDataView trainSetPredictions = model.Transform(trainTestSplit.TrainSet);
 IDataView testSetpredictions = model.Transform(trainTestSplit.TestSet);
 ```
@@ -25,6 +26,7 @@ This will make predictions on both the training and test sets.
 Then, below that, use the `Evaluate` method to compare the `Label` and `Score` columns for both datasets. Evaluation is performed by comparing the difference between the ground-truth (Label) to the predicted value (Score).
 
 ```csharp
+// Calculate evaluation metrics for train and test sets
 var trainSetMetrics = mlContext.Regression.Evaluate(trainSetPredictions, labelColumnName: "Label", scoreColumnName: "Score");
 var testSetMetrics = mlContext.Regression.Evaluate(testSetpredictions, labelColumnName: "Label", scoreColumnName: "Score");
 ```
