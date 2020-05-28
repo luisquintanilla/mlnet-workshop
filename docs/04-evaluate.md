@@ -73,4 +73,12 @@ Set the startup project to *TrainConsole* and run the application. The result sh
 Cross Validated R-Squared: 0.8736620547207405
 ```
 
+## Improving the model
+
+Some ways that might help improve the model
+
+- Use more data
+- Use different features to train the model
+- Choose a different algorithm or update the algorithm hyperparameters.
+
 Next up - [05-save-model](05-save-model.md)
