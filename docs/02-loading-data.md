@@ -28,9 +28,9 @@ See [Load data from files and other sources](https://docs.microsoft.com/dotnet/m
 
 First you need to download the data:
 
-[1.2 Million Used Car Listings](https://github.com/luisquintanilla/mlnet-workshop/raw/master/data/true_car_listings.csv)
+[1.2 Million Used Car Listings](https://github.com/luisquintanilla/mlnet-workshop/raw/master/data/true_car_listings.csv) (right-click, Save As and store it in your working folder for the lab)
 
-Unzip the data. You can open it and inspect its contents. It should look something like this:
+You can open it and inspect its contents. It should look something like this:
 
 ![Used car sale data in CSV format](https://user-images.githubusercontent.com/782127/82711417-575aab80-9c53-11ea-9270-459fb5e79441.png)
 
