@@ -45,7 +45,7 @@ Set the startup project to *TrainConsole* and run the application. The result sh
 Train Set R-Squared: 0.894899038906622 | Test Set R-Squared 0.8985548041404988
 ```
 
-Note that these are very close and the accuracy of the test set is slightly higher. This is something you'd typically what you'd like to see. This means that the model is generalizing well and not overfitting. Overfitting is a term used to refer to a model that doesn't generalize well or make accurate predictions on unseen data.
+Note that these are very close and the accuracy of the test set is slightly higher. This is something you'd typically want to see. This means that the model is generalizing well and not overfitting. Overfitting is a term used to refer to a model that doesn't generalize well or make accurate predictions on unseen data.
 
 ## (Optional) Cross-Validation
 
