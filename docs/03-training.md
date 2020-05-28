@@ -17,6 +17,7 @@ The goal of a machine learning model is to identify patterns within training dat
 Use the `TrainTestSplit` method to split the data into train and test sets. The result will be a `TrainTestData` object which contains two `IDataView` members, one for the train set and the other for the test set. The data split percentage is determined by the `testFraction` parameter. The snippet below is holding out 20 percent of the original data for the test set.
 
 ```csharp
+// Split the data into a train and test set
 var trainTestSplit = mlContext.Data.TrainTestSplit(trainingData, testFraction: 0.2);
 ```
 
@@ -27,6 +28,7 @@ Most data can't be used as-is - we need to transform it before we can work with 
 Go back into *Program.cs* and add the following code after declaring `trainingData`:
 
 ```csharp
+// Create data transformation pipeline
 var dataProcessPipeline =
     mlContext.Transforms.Categorical.OneHotEncoding(outputColumnName: "MakeEncoded", inputColumnName: "Make")
         .Append(mlContext.Transforms.Categorical.OneHotEncoding(outputColumnName: "ModelEncoded", inputColumnName: "Model"))
