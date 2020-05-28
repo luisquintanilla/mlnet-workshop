@@ -26,7 +26,7 @@ Go ahead and clone this repo to your machine, then dive in and [get started](/do
 | Phase | Topics |
 | ----- | ---- |
 | [Phase #0](/docs/00-get-started.md) | Get bits installed and set up your environment |
-| [Phase #1](/docs/01-add-ml-context.md) | Intall the ML.NET NuGet package, intialize an ML.NET environment |
+| [Phase #1](/docs/01-add-ml-context.md) | Install the ML.NET NuGet package, initialize an ML.NET environment |
 | [Phase #2](/docs/02-loading-data.md) | Load data for training  |
 | [Phase #3](/docs/03-training.md) | Choose data transforms and algorithms, train the model |
 | [Phase #4](/docs/04-evaluate.md) | Evaluate model performance |
