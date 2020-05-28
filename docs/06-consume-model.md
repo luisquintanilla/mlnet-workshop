@@ -111,4 +111,4 @@ Set the startup project to `Web` and run the application. Fill in the form field
 
 Congratulations! You have now used the model inside your web application.
 
-Next up - [06-deep-learning](07-deep-learning.md)
+Next up - [07-deep-learning](07-deep-learning.md)
