@@ -1,6 +1,6 @@
 # Add ML Context
 
-In this session, you'll add an `MLContext` to the `TrainingConsole` project. `MLContext` is the starting point for all ML.NET operations. It provides a way to create components for:
+In this session, you'll add an `MLContext` to the `TrainConsole` project. `MLContext` is the starting point for all ML.NET operations. It provides a way to create components for:
 
 - Data preparation
 - Feature engineering
@@ -17,7 +17,7 @@ First, we need to add the ML.NET NuGet package to the `Shared` project. If you'r
 
 ![Install Microsoft.ML NuGet package](./media/install-microsoft-ml-nuget.png)
 
-Alternately if you prefer working from the command line, you can run this command from the *src/TrainingConsole* folder:
+Alternately if you prefer working from the command line, you can run this command from the *src/TrainConsole* folder:
 
 ```powershell
 dotnet add package Microsoft.ML -v 1.5.0
@@ -25,7 +25,7 @@ dotnet add package Microsoft.ML -v 1.5.0
 
 ## Initialize MLContext
 
-Open the `Program.cs` file in the `TrainingConsole` project and add the following `using` statement at the top of the file to reference the `Microsoft.ML` package.
+Open the `Program.cs` file in the `TrainConsole` project and add the following `using` statement at the top of the file to reference the `Microsoft.ML` package.
 
 ```csharp
 using Microsoft.ML;
