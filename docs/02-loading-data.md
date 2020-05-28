@@ -28,7 +28,7 @@ See [Load data from files and other sources](https://docs.microsoft.com/dotnet/m
 
 First you need to download the data:
 
-[850,000 Used Car Listings in CSV Format](https://www.kaggle.com/jpayne/852k-used-car-listings#true_car_listings.csv)
+[1.2 Million Used Car Listings](https://github.com/luisquintanilla/mlnet-workshop/raw/master/data/true_car_listings.csv)
 
 Unzip the data. You can open it and inspect its contents. It should look something like this:
 
