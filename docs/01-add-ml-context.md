@@ -1,26 +1,36 @@
 # Add ML Context
 
-In this session, you'll add an ML Context to the Training Console Application. You'll need to add a using statement as well as the MLContext type.
+In this session, you'll add an `MLContext` to the `TrainingConsole` project. `MLContext` is the starting point for all ML.NET operations. It provides a way to create components for:
 
-## Modifying the Program
+- Data preparation
+- Feature engineering
+- Training
+- Prediction
+- Model evaluation
+- Logging
+- Execution control
+- Seeding
 
-Open the `Program.cs` file in the TrainingConsoleApp project. On the very first line, add a using statement for `Microsoft.ML`:
+## Initialize MLContext
 
-```c#
+Open the `Program.cs` file in the `TrainingConsole` project and add the following `using` statement at the top of the file to reference the `Microsoft.ML` package.
+
+```csharp
 using Microsoft.ML;
-using System;
 ```
 
-Next, scroll down to the `static void Main` method and add a new variable declaration on the first line:
+Next, create an instance of `MLContext` in the `Main` method:
 
-```c#
+```csharp
 static void Main(string[] args)
 {
     MLContext mlContext = new MLContext();
-
-// the rest omitted
+    //...
+}
 ```
 
-At this point we're not yet ready to work with the context, but you should be able to successfully build the application once more.
+![Add MLContext](./media/add-ml-context.png)
+
+At this point we're not yet ready to work with the `MLContext`, but you should be able to successfully build the application once more.
 
 Next up - [02-loading-data](02-loading-data.md)

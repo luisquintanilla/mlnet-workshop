@@ -1,37 +1,50 @@
 # Get started
 
-In this session, you'll get ready to use ML.NET in an application.
+In this section you'll set up your environment to build machine learning applications with ML .NET. [ML.NET](dot.net/ml) is a cross-platform, machine learning framework for .NET developers.
 
-## Setup
+## Requirements
 
-TODO: What requirements are there? Visual Studio version? VS Code? Version of .NET Core? Does it work on non-Windows machines?
+- [Git(Optional)](https://git-scm.com/)
 
-### Clone the starter application
+### Windows
+
+- [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) with .NET Core workload installed.
+- Model Builder enabled.
+
+### Mac / Linux
+
+- [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+- [ML.NET CLI](https://www.nuget.org/packages/MLNet/)
+- [Visual Studio Code (Optional)](https://code.visualstudio.com/Download)
+
+### Clone or download the starter application
 
 We've set up an initial project for you to start from. You just need to clone this repo to your machine and then open it up in Visual Studio or your editor of choice. A simple way to clone the application is to run this command from a command line terminal:
 
 ```powershell
-git clone https://github.com/briacht/HowMuchIsMyCar
+git clone https://github.com/luisquintanilla/mlnet-workshop
 ```
 
-Once you've done this, change directories to the `HowMuchIsMyCar` folder and again to the `src` folder where you'll find the `HowMuchIsMyCar.sln` file. Open the solution. You should see two projects, similar to what's shown here:
+Alternatively, you can download a [zipped version of the project](https://github.com/luisquintanilla/mlnet-workshop/archive/master.zip) and unzip that.
 
-![solution explorer](https://user-images.githubusercontent.com/782127/82521002-7e01d080-9af3-11ea-85bf-a2c5c7da7b4d.png)
+Once you've done this, change directories to the *mlnet-workshop/src* folder where you'll find the *MLNETWorkshop.sln* file. Open the solution. You should see two projects, similar to what's shown here:
 
-### Add the ML.NET Nuget Package
+<!-- ![solution explorer](https://user-images.githubusercontent.com/782127/82521002-7e01d080-9af3-11ea-85bf-a2c5c7da7b4d.png) -->
 
-Next, we need to add the ML.NET NuGet package to the `TrainingConsole` project. If you're using Visual Studio, just right click on the project name and select `Manage NuGet Dependencies`. Then click the "Browse" tab and search for `Microsoft.ML`.
+## Install the ML.NET Nuget Package
 
-![NuGet](https://user-images.githubusercontent.com/782127/82521205-fb2d4580-9af3-11ea-9cf1-3e07463fb735.png)
+Next, we need to add the ML.NET NuGet package to the `Shared` project. If you're using Visual Studio, right click on the project name and select **Manage NuGet Dependencies**. Then click the "Browse" tab and search for `Microsoft.ML`. Make sure to install version **1.4.0**.
 
-Alternately if you prefer working from the command line, you can run this command from the `src/TrainingConsole` folder:
+![Install Microsoft.ML NuGet package](./media/install-microsoft-ml-nuget.png)
+
+Alternately if you prefer working from the command line, you can run this command from the *src/TrainingConsole* folder:
 
 ```powershell
-dotnet add package Microsoft.ML -v 1.5.0-preview2
+dotnet add package Microsoft.ML -v 1.4.0
 ```
 
-### Build the application
+## Build the application
 
-At this point you should be able to build the application for the first time, which you can do from your editor or at the command line with `dotnet build` from the root of the `src` folder.
+At this point you should be able to build the solution for the first time, which you can do from Visual Studio or the command line with `dotnet build` from the root of the `src` folder.
 
 Next up - [01-add-ml-context](01-add-ml-context.md)
