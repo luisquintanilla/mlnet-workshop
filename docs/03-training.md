@@ -25,7 +25,7 @@ var trainTestSplit = mlContext.Data.TrainTestSplit(trainingData, testFraction: 0
 
 Most data can't be used as-is - we need to transform it before we can work with it. This is done by performing a series of transforms in succession as a pipeline.
 
-Go back into *Program.cs* and add the following code after declaring `trainingData`:
+Go back into *Program.cs* in the TrainConsole project and add the following code after declaring `trainingData`:
 
 ```csharp
 // Create data transformation pipeline
