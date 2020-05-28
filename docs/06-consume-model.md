@@ -98,3 +98,5 @@ Set the startup project to `Web` and run the application. Fill in the form field
 ![Consume the model in web app](./media/consume-model.png)
 
 Congratulations! You have now used the model inside your web application.
+
+Next up - [06-deep-learning](07-deep-learning.md)

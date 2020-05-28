@@ -31,18 +31,6 @@ Once you've done this, change directories to the *mlnet-workshop/src* folder whe
 
 <!-- ![solution explorer](https://user-images.githubusercontent.com/782127/82521002-7e01d080-9af3-11ea-85bf-a2c5c7da7b4d.png) -->
 
-## Install the ML.NET Nuget Package
-
-Next, we need to add the ML.NET NuGet package to the `Shared` project. If you're using Visual Studio, right click on the project name and select **Manage NuGet Dependencies**. Then click the "Browse" tab and search for `Microsoft.ML`. Make sure to install version **1.4.0**.
-
-![Install Microsoft.ML NuGet package](./media/install-microsoft-ml-nuget.png)
-
-Alternately if you prefer working from the command line, you can run this command from the *src/TrainingConsole* folder:
-
-```powershell
-dotnet add package Microsoft.ML -v 1.4.0
-```
-
 ## Build the application
 
 At this point you should be able to build the solution for the first time, which you can do from Visual Studio or the command line with `dotnet build` from the root of the `src` folder.

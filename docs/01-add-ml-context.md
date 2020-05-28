@@ -11,6 +11,18 @@ In this session, you'll add an `MLContext` to the `TrainingConsole` project. `ML
 - Execution control
 - Seeding
 
+## Install the ML.NET Nuget Package
+
+First, we need to add the ML.NET NuGet package to the `Shared` project. If you're using Visual Studio, right click on the project name and select **Manage NuGet Dependencies**. Then click the "Browse" tab and search for `Microsoft.ML`. Make sure to install version **1.4.0**.
+
+![Install Microsoft.ML NuGet package](./media/install-microsoft-ml-nuget.png)
+
+Alternately if you prefer working from the command line, you can run this command from the *src/TrainingConsole* folder:
+
+```powershell
+dotnet add package Microsoft.ML -v 1.4.0
+```
+
 ## Initialize MLContext
 
 Open the `Program.cs` file in the `TrainingConsole` project and add the following `using` statement at the top of the file to reference the `Microsoft.ML` package.

@@ -74,7 +74,11 @@ public class ModelInput
 
 ## Load the data from the file into an IDataView
 
-Now open up *Program.cs* file in the `TrainConsole` project.
+Now open up *Program.cs* file in the `TrainConsole` project and add the following `using` statement:
+
+```csharp
+using Shared;
+```
 
 Inside of the class definition, add the location of the file wherever you saved it as a static string:
 

@@ -64,3 +64,5 @@ Set the startup project to *TrainConsole* and run the application. The result sh
 ```text
 Cross Validated R-Squared: 0.8736620547207405
 ```
+
+Next up - [05-save-model](05-save-model.md)
