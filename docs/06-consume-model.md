@@ -8,6 +8,8 @@ One of the advantages of ML<i>.NET is you have different deployment targets. Per
 
 Install the `Microsoft.Extensions.ML` NuGet package to the `Web` project. Make sure to select version **1.4.0**.
 
+![Install Microsoft.Extensions.ML NuGet package](./install-microsoftextensionsml-nuget.png)
+
 Alternatively, you can use the dotnet cli
 
 ```dotnetcli
@@ -45,6 +47,8 @@ services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromFile(@"C:\Dev\ML
 ```
 
 In this case, the model was loaded from a file, but you can also load models stored remotely via publicly accessible endpoints using the `FromUri` method.
+
+![Register PredictionEnginePool service in Startup](./media/register-predictionenginepool-service.png)
 
 ## Add PreditionEnginePool to Index PageModel
 
@@ -85,8 +89,12 @@ public void OnPost()
 }
 ```
 
+In the snippet above, the information from the `CarInfo` model is taken and a new instance of `ModelInput` is created. Then, the `Predict` function is used to predict the price of a vehicle, given the inputs from the `input` variable. Once a prediction is made, the `Price` property of the `CarInfo` is set to the predicted value and the price is displayed on screen.
+
 ## Run the app
 
 Set the startup project to `Web` and run the application. Fill in the form fields and select **Predict Price**.
+
+![Consume the model in web app](./media/consume-model.png)
 
 Congratulations! You have now used the model inside your web application.

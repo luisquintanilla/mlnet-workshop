@@ -68,6 +68,8 @@ public class ModelInput
 }
 ```
 
+![Define model input schema](./media/define-model-input-schema.png)
+
 > Note that not all columns are loaded. Each `LoadColumn` attribute specifies the index of its respective column within the file. The `ColumnName` attribute tells the `IDataView` to identify the `Price` property by the `Label` column. The ground-truth values or the value to predict is known as the **label**. Since we want to be able to predict the price, we treat that as the label. The rest of the columns or inputs are known as **features**. Learn more about [data annotations](https://docs.microsoft.com/dotnet/machine-learning/how-to-guides/load-data-ml-net#annotating-the-data-model-with-column-attributes) and [expected column types](https://docs.microsoft.com/dotnet/machine-learning/how-to-guides/train-machine-learning-model-ml-net#working-with-expected-column-types).
 
 ## Load the data from the file into an IDataView

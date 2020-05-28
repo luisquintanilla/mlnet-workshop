@@ -33,9 +33,9 @@ Once you've done this, change directories to the *mlnet-workshop/src* folder whe
 
 ## Install the ML.NET Nuget Package
 
-Next, we need to add the ML.NET NuGet package to the `Shared` project. If you're using Visual Studio, right click on the project name and select **Manage NuGet Dependencies**. Then click the "Browse" tab and search for `Microsoft.ML`.
+Next, we need to add the ML.NET NuGet package to the `Shared` project. If you're using Visual Studio, right click on the project name and select **Manage NuGet Dependencies**. Then click the "Browse" tab and search for `Microsoft.ML`. Make sure to install version **1.4.0**.
 
-![NuGet](https://user-images.githubusercontent.com/782127/82521205-fb2d4580-9af3-11ea-9cf1-3e07463fb735.png)
+![Install Microsoft.ML NuGet package](./media/install-microsoft-ml-nuget.png)
 
 Alternately if you prefer working from the command line, you can run this command from the *src/TrainingConsole* folder:
 

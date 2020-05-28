@@ -35,13 +35,15 @@ Finally, print out the metrics out to the console.
 Console.WriteLine($"Train Set R-Squared: {trainSetMetrics.RSquared} | Test Set R-Squared {testSetMetrics.RSquared}");
 ```
 
-Run the application. The result should look something like the output below:
+![Evaluate the model](./media/evaluate-model.png)
+
+Set the startup project to *TrainConsole* and run the application. The result should look something like the output below:
 
 ```csharp
 Train Set R-Squared: 0.894899038906622 | Test Set R-Squared 0.8985548041404988
 ```
 
-Note that these are very close and the accuracy of the test set is slightly higher. This is something you'd typically what you'd like to see. This means that the model is generalizing well and not overfitting. Overfitting is a term used to refer to a model that doesn't generalize well or make accurate predictions on unseen data. 
+Note that these are very close and the accuracy of the test set is slightly higher. This is something you'd typically what you'd like to see. This means that the model is generalizing well and not overfitting. Overfitting is a term used to refer to a model that doesn't generalize well or make accurate predictions on unseen data.
 
 ## (Optional) Cross-Validation
 
@@ -57,7 +59,7 @@ Console.WriteLine($"Cross Validated R-Squared: {avgRSquared}");
 
 When using cross validation, because the data is automatically partitioned for you, there's no need to split into train and test sets (although you can if you want to). In the previous example, the data is partitioned into 5 folds. The overall accuracy of the models is measured by looking at the average metrics (in this case R-Squared).
 
-Run the application. The result should look similar to the output below:
+Set the startup project to *TrainConsole* and run the application. The result should look similar to the output below:
 
 ```text
 Cross Validated R-Squared: 0.8736620547207405

@@ -29,6 +29,8 @@ static void Main(string[] args)
 }
 ```
 
+![Add MLContext](./media/add-ml-context.png)
+
 At this point we're not yet ready to work with the `MLContext`, but you should be able to successfully build the application once more.
 
 Next up - [02-loading-data](02-loading-data.md)
