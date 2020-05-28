@@ -31,7 +31,7 @@ Open the `Program.cs` file in the `TrainingConsole` project and add the followin
 using Microsoft.ML;
 ```
 
-Next, create an instance of `MLContext` in the `Main` method:
+Next, create an instance of `MLContext` in the `Main` method (replace the "Hello World" line):
 
 ```csharp
 static void Main(string[] args)

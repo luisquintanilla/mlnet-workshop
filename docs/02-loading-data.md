@@ -28,9 +28,9 @@ See [Load data from files and other sources](https://docs.microsoft.com/dotnet/m
 
 First you need to download the data:
 
-[1.2 Million Used Car Listings](https://github.com/luisquintanilla/mlnet-workshop/raw/master/data/true_car_listings.csv)
+[1.2 Million Used Car Listings](https://github.com/luisquintanilla/mlnet-workshop/raw/master/data/true_car_listings.csv) (right-click, Save As and store it in your working folder for the lab)
 
-Unzip the data. You can open it and inspect its contents. It should look something like this:
+You can open it and inspect its contents. It should look something like this:
 
 ![Used car sale data in CSV format](https://user-images.githubusercontent.com/782127/82711417-575aab80-9c53-11ea-9270-459fb5e79441.png)
 
@@ -74,7 +74,7 @@ public class ModelInput
 
 ## Load the data from the file into an IDataView
 
-Now open up *Program.cs* file in the `TrainConsole` project and add the following `using` statement:
+Now open up *Program.cs* file in the `TrainConsole` project (**not** the web project!) and add the following `using` statement:
 
 ```csharp
 using Shared;
@@ -85,7 +85,7 @@ Inside of the class definition, add the location of the file wherever you saved 
 ```csharp
 class Program
 {
-    // update this with your file's path where you unzipped it
+    // update this with your file's path where you saved it
     private static string TRAIN_DATA_FILEPATH = @"C:\Dev\true_car_listings.csv";
 
     //...
