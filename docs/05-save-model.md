@@ -11,6 +11,7 @@ private static string MODEL_FILEPATH = @"C:\Dev\MLModel.zip";
 Then, inside the `Main` method, add the following code below the evaluation section
 
 ```csharp
+// Save model
 Console.WriteLine("Saving model...");
 mlContext.Model.Save(model, trainingData.Schema, MODEL_FILEPATH);
 ```
