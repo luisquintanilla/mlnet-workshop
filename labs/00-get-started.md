@@ -1,6 +1,6 @@
 # Get started
 
-In this section you'll set up your environment to build machine learning applications with ML .NET. [ML.NET](dot.net/ml) is a cross-platform, machine learning framework for .NET developers.
+In this section you'll set up your environment to build machine learning applications with ML .NET. [ML.NET](https://dot.net/ml) is a cross-platform, machine learning framework for .NET developers.
 
 ## Requirements
 
