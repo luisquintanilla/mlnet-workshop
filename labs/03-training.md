@@ -1,4 +1,4 @@
-# Training
+# Phase 2.2: Training
 
 In this session, you'll configure a data processing pipeline to use to prepare the data, the algorithm to use, and you'll create a machine learning model to predict used car prices.
 

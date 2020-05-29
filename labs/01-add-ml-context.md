@@ -1,4 +1,4 @@
-# Add ML Context
+# Phase 2.0: Add ML Context
 
 In this session, you'll add an `MLContext` to the `TrainConsole` project. `MLContext` is the starting point for all ML.NET operations. It provides a way to create components for:
 
