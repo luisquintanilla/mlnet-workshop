@@ -10,7 +10,7 @@ Machine Learning Operations (MLOps) is based on [DevOps](https://wikipedia.org/w
 
 ![MLOps Cycle](https://user-images.githubusercontent.com/46974588/83207091-5973ad00-a120-11ea-92d5-87738370ab0d.png)
 
-Like DevOps, the MLOps lifecycle consists of the automation of several steps. This is typically done by some build system as part of a Continuous Integration (CI) and Continuous Delivery (CD) pipeline.
+Like DevOps, the MLOps lifecycle consists of the automation of several steps. This is typically done by some build system as part of a Continuous Integration (CI) and Continuous Delivery (CD) pipeline. This provides full control over the entire model lifecyle. Training and deploying models using MLOps practices in addition to automating the process, it also provides auditability, transparency, and reproducibility.
 
 ### Train
 
@@ -18,7 +18,7 @@ Train: In a typical scenario, when data changes or a Data Scientist checks a cha
 
 ### Evaluate
 
-Evaluate: The results of the run can then be inspected to see the performance characteristics of the trained model. This can be done using traditional methods like unit tests.
+Evaluate: The results of the run can then be inspected to see the performance characteristics of the trained model. This can be done using traditional methods like unit tests. If you have access to previous models that are in production or produced in previous runs, you can then evaluate the performance across various models to select the best one. 
 
 ### Deploy
 
