@@ -1,4 +1,4 @@
-# Loading Data
+# Phase 2.1: Loading Data
 
 In this session, you'll download the data needed to train the model and load it into an `IDataView`. 
 
