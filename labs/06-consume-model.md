@@ -1,4 +1,4 @@
-# Consume the model
+# Phase 3.0: Consume the model
 
 In this section you'll learn how to deploy the application to an ASP.NET Core Razor Pages application
 
