@@ -4,6 +4,6 @@ You'll have 3 minutes to create a Machine Learning model that classifies e-comme
 
 ## Requirements
 - Use ML.NET Model Builder in Visual Studio or the ML.NET CLI (cross-platform)
-- Use this e-commerce dataset for training
+- Use [this e-commerce dataset](/data/flipkart_com-ecommerce_sample.csv) for training
 - Make sure you train AND use the model to make predictions in a .NET app
 - Hint: Train for at least 40 seconds
