@@ -32,4 +32,4 @@ Deploy: As part of the release pipeline can also create a pipeline that deploys 
 - [MLOps for ML.NET Presentation](https://www.youtube.com/watch?v=0iwL9cfkYfY)
 - [Azure DevOps documentation](https://docs.microsoft.com/azure/devops/?view=azure-devops)
 - [Continous Delivery for Machine Learning](https://martinfowler.com/articles/cd4ml.html)
-- [ML.NET Model Livecycle with Azure DevOps CI/CD pipelines](https://devblogs.microsoft.com/cesardelatorre/ml-net-model-lifecycle-with-azure-devops-ci-cd-pipelines/)
+- [ML.NET Model Lifecycle with Azure DevOps CI/CD pipelines](https://devblogs.microsoft.com/cesardelatorre/ml-net-model-lifecycle-with-azure-devops-ci-cd-pipelines/)

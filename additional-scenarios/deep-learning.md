@@ -26,7 +26,7 @@ ONNX is an open format built to represent machine learning models. ONNX enables 
 
 ML.NET uses TensorFlow through the low-level bindings provided by the [TensorFlow.NET](https://github.com/SciSharp/TensorFlow.NET) library. The TensorFlow.NET library is an open source and low-level API library that provides the .NET Standard bindings for TensorFlow. That library is part of the open source [SciSharp](https://github.com/SciSharp) stack libraries.
 
-To train image classification models, using the ML.NET API, use the [ImageClassificationTrainer](https://docs.microsoft.com/dotnet/api/microsoft.ml.vision.imageclassificationtrainer?view=ml-dotnet).
+To train image classification models, using the ML.NET API, use the [ImageClassification API](https://docs.microsoft.com/dotnet/api/microsoft.ml.visioncatalog.imageclassification?view=ml-dotnet#Microsoft_ML_VisionCatalog_ImageClassification_Microsoft_ML_MulticlassClassificationCatalog_MulticlassClassificationTrainers_System_String_System_String_System_String_System_String_Microsoft_ML_IDataView_).
 
 You can also train custom deep learning models in Model Builder. The process is generally the same, but in addition to training locally, you can also leverage Azure to train models in GPU enabled compute instances.
 
