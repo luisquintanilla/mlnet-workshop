@@ -36,5 +36,7 @@ Go ahead and clone this repo to your machine, then dive in and [get started](/la
 
 ## Addtional Scenarios 
 
+| Scenario | Topics |
+| ----- | ---- |
 | [Deep Learning](/additional-scenarios/deep-learning.md) | Learn about deep learning, build an image classification model |
 | [MLOps](/additional-scenarios/mlops.md) | Learn about MLOps |
