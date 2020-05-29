@@ -30,8 +30,6 @@ This also applies to offline scenarios.; Yyou can train and consume ML.NET model
 
 ML.NET has evolved into a significant machine learning framework that powers features in many Microsoft products, such as Microsoft Defender ATP, Bing Suggested Search, PowerPoint Design Ideas, Excel Chart Recommendations, and many Azure services.
 
-**TODO:** [break up with photo here]
-
 The framework has demonstrated high performance and accuracy in [experimental evaluations](https://arxiv.org/pdf/1905.05715.pdf). Using a 9GB Amazon review data set, ML.NET trained a sentiment analysis model with 95% accuracy. Other popular machine learning frameworks failed to process the dataset due to memory errors. Training on 10% of the data set, to let all the frameworks complete training, ML.NET demonstrated the highest speed and accuracy. The performance evaluation found similar results in other machine learning scenarios, including click-through rate prediction and flight delay prediction.
 
 ![accuracy vs runtime chart](https://user-images.githubusercontent.com/782127/83193742-89fa1d80-a105-11ea-8919-791e3a4ab9cf.png)
@@ -39,16 +37,6 @@ The framework has demonstrated high performance and accuracy in [experimental ev
 Since ML.NET’s launch, many companies have used the framework to add a variety of machine learning scenarios to their .NET apps, like Williams Mullen for law document classification, Evolution Software for hazelnut moisture level prediction, and SigParser for spam email detection.
 
 You can read more about some of these use cases in the [ML.NET Showcase](https://dotnet.microsoft.com/apps/machinelearning-ai/ml-dotnet/customers).
-
-## Train custom models and consume pre-trained models
-
-**TODO:** ML.NET
-
-- talk about difference / which ml tasks support what
-
-## ML.NET tooling + AutoML
-
-**TODO:** Add content
 
 ## ML.NET integration with other Microsoft ML tech
 
