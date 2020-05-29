@@ -1,4 +1,4 @@
-# Save the model
+# Phase 2.4: Save the model
 
 In this section you'll learn how to serialize and save the trained model for deployment and later use in other applications.
 
