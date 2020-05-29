@@ -30,9 +30,12 @@ To train image classification models, using the ML.NET API, use the [ImageClassi
 
 You can also train custom deep learning models in Model Builder. The process is generally the same, but in addition to training locally, you can also leverage Azure to train models in GPU enabled compute instances.
 
-## Additional Resources
+## Additional tasks
+
+- [Task 1: Local image training with image classification API](https://docs.microsoft.com/dotnet/machine-learning/tutorials/image-classification-api-transfer-learning)
+- [Task 2: Azure image training with ML.NET Model Builder](https://devblogs.microsoft.com/dotnet/train-image-classification-model-azure-mlnet-model-builder/)
+
+## Additional resources
 
 - [Build an image classification model in under 10 minutes with Model Builder and Azure](https://www.youtube.com/watch?v=G_ZJZdKLNMc&)
-- [How to train an image classification model with Model Builder](https://devblogs.microsoft.com/dotnet/train-image-classification-model-azure-mlnet-model-builder/)
-- [Train a custom deep learning model to identify damaged infrastructure](https://docs.microsoft.com/dotnet/machine-learning/tutorials/image-classification-api-transfer-learning)
 - [Detect objects using ONNX in ML.NET](https://docs.microsoft.com/dotnet/machine-learning/tutorials/object-detection-onnx)

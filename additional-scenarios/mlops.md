@@ -26,10 +26,13 @@ Deploy: As part of the release pipeline can also create a pipeline that deploys 
 
 *Deploying to ARM environments (IoT/Mobile) might require converting the model to ONNX.
 
-## Additional Resource
+## Additional tasks
 
-- [Sample ML.NET MLOps project](https://github.com/luisquintanilla/MLNETCICDTest)
+- [Task 1: Build a project that trains, tests, and deploys a sentiment analysis model](https://github.com/luisquintanilla/MLNETCICDTest)
+
+## Additional resources
+
 - [MLOps for ML.NET Presentation](https://www.youtube.com/watch?v=0iwL9cfkYfY)
 - [Azure DevOps documentation](https://docs.microsoft.com/azure/devops/?view=azure-devops)
 - [Continous Delivery for Machine Learning](https://martinfowler.com/articles/cd4ml.html)
-- [ML.NET Model Lifecycle with Azure DevOps CI/CD pipelines](https://devblogs.microsoft.com/cesardelatorre/ml-net-model-lifecycle-with-azure-devops-ci-cd-pipelines/)
+- [ML.NET Model Lifecycle with Azure DevOps CI/CD pipelines](https://devblogs.microsoft.com/cesardelatorre/ml-net-model-lifecycle-with-azure-devops-ci-cd-pipelines/)s
