@@ -28,7 +28,7 @@ See [Load data from files and other sources](https://docs.microsoft.com/dotnet/m
 
 Normally, you would need to download the data and, if necessary, extract or unzip it to a directory on your computer. For this lab, you already have the data in the `data` directory in this repository.
 
-[View Data Online - 1.2 Million Used Car Listings](https://github.com/luisquintanilla/mlnet-workshop/raw/master/data/true_car_listings.csv)
+[View Data Online - 1.2 Million Used Car Listings](../data/true_car_listings.csv)
 
 You can open and inspect the CSV file's contents using a tool like Excel:
 
