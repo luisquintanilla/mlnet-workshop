@@ -34,8 +34,6 @@ Machine learning can be used to solve a ton of different types of problems. Mach
 
 Classification is used to predict the class (category) of an instance of data. Often times this is split up into binary classification (2 classes) and multi-class classification (more than 2 classes), and it can be used to classify text, images, and more.
 
-**TODO**: [add image of text classification and image classification]
-
 Examples include:
 
 - Classifying law documents
@@ -198,8 +196,6 @@ AutoML will take your ML scenario and dataset and will iterate through different
 
 There are a ton of different frameworks, libraries, tools, and technologies for machine learning. Some have the ability to train custom models, some are just for consuming models, and some have the ability to do both those tasks and more. Even within Microsoft, there are a variety of different machine learning offerings. Below is a break-down of a few of the most popular ML technologies.
 
-**TODO:** [maybe have code snippets for sentiment analysis for each fx???]
-
 ### External
 
 #### Scikit-learn
@@ -252,7 +248,7 @@ Windows Machine Learning (WinML) allows developers to use trained machine learni
 
 #### ML.NET
 
-**TODO:** [quick description of ML.NET here]
+ML.NET is an open source and cross platform ML framework for .NET developers.
 
 Comparison chart of Microsoft offerings:
 [//]: # (Table Creator: www.tablesgenerator.com/markdown_tables)
