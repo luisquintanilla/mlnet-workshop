@@ -22,7 +22,7 @@ Evaluate: The results of the run can then be inspected to see the performance ch
 
 ### Deploy
 
-Deploy: As part of the release pipeline can also create a pipeline that deploys the model. Deployment can have multiple meanings. Deployment mean publishing the validated production version of the model to a file share or blob storage to be accessed downstream from other end-user applications and services. .NET provides various deployment targets, so this could mean deploying the model inside of a desktop (WPF,UWP), web (Blazor, Razor Pages, Web API, Docker, Serverless),  Mobile*, IoT*.
+Deploy: As part of the release pipeline you can also create a pipeline that deploys the model. Deployment can have multiple meanings. Deployment means publishing the validated production version of the model to a file share or blob storage to be accessed downstream from other end-user applications and services. .NET provides various deployment targets, so this could mean deploying the model inside of a desktop (WPF,UWP), web (Blazor, Razor Pages, Web API, Docker, Serverless),  Mobile*, IoT* as well.
 
 *Deploying to ARM environments (IoT/Mobile) might require converting the model to ONNX.
 
