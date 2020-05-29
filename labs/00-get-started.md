@@ -37,5 +37,3 @@ Once you've done this, change directories to the *mlnet-workshop/src* folder whe
 ## Build the application
 
 At this point you should be able to build the solution for the first time, which you can do from Visual Studio or the command line with `dotnet build` from the root of the `src` folder.
-
-Next up - [01-add-ml-context](01-add-ml-context.md)

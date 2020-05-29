@@ -101,5 +101,3 @@ IDataView trainingData = mlContext.Data.LoadFromTextFile<ModelInput>(path: TRAIN
 ```
 
 At this point, you have defined how to load data into an `IDataView` with a `ModelInput` schema. It's important to remember though that an `IDataView` is lazy and no loading takes place at this stage. We'll explore that in the following section. You're now ready to define the set of data transformations and algorithms used to train your machine learning model.
-
-Next up - [03-training](03-training.md)

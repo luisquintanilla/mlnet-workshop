@@ -82,5 +82,3 @@ Some ways that might help improve the model
 - Use more data
 - Use different features to train the model
 - Choose a different algorithm or update the algorithm hyperparameters.
-
-Next up - [05-save-model](05-save-model.md)

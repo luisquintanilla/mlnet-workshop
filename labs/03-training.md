@@ -72,5 +72,3 @@ var model = trainingPipeline.Fit(trainTestSplit.TrainSet);
 ![Train the model](./media/train-model.png)
 
 Once we've set up our model, the next step is to test it and see how it performs.
-
-Next up - [04-evaluate](04-evaluate.md)
