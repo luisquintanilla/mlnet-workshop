@@ -2,6 +2,8 @@
 
 In this section you'll learn how to serialize and save the trained model for deployment and later use in other applications.
 
+If you were not able to complete the last section, use this version of the code as the [starting point](https://github.com/luisquintanilla/mlnet-workshop-guide/archive/2-3.zip).
+
 At the top of the *Program.cs* class, define the path of where you want your model saved to. The model is serialized and stored as a `.zip` file. In this case, the model will be saved to a file called *MLModel.zip*.
 
 ```csharp

@@ -2,6 +2,8 @@
 
 In this section you will determine how well your model performs.
 
+If you were not able to complete the last section, use this version of the code as the [starting point](https://github.com/luisquintanilla/mlnet-workshop-guide/archive/2-2.zip).
+
 ## Evaluation metrics
 
 The evaluation metric used to measure model performance depends on the task. The task in this application is regression. Some common regression metrics are:
