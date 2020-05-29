@@ -9,13 +9,14 @@ In this section you'll set up your environment to build machine learning applica
 ### Windows
 
 - [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) with .NET Core workload installed.
-- Model Builder enabled.
+- [Model Builder enabled](https://github.com/dotnet/machinelearning-modelbuilder/issues/757#issuecomment-631665947).
 
 ### Mac / Linux
 
 - [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 - [ML.NET CLI](https://www.nuget.org/packages/MLNet/)
 - [Visual Studio Code (Optional)](https://code.visualstudio.com/Download)
+- [.NET Core 2.1 SDK](aka.ms/download-netcore-21)
 
 ### Clone or download the starter application
 
