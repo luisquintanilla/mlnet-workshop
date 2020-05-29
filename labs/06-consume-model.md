@@ -2,7 +2,7 @@
 
 In this section you'll learn how to deploy the application to an ASP.NET Core Razor Pages application
 
-One of the advantages of ML<i>.NET is you have different deployment targets. Perhaps you're used to building desktop, mobile and web applications in .NET. All of these are potential deployment targets for your model.
+One of the advantages of ML.NET is you have different deployment targets. Perhaps you're used to building desktop, mobile and web applications in .NET. All of these are potential deployment targets for your model.
 
 ## Install Microsoft.Extensions.ML package
 
