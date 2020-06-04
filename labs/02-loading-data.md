@@ -32,7 +32,7 @@ Normally, you would need to download the data and, if necessary, extract or unzi
 
 You can open and inspect the CSV file's contents using a tool like Excel:
 
-![Used car sale data in CSV format](https://user-images.githubusercontent.com/782127/82711417-575aab80-9c53-11ea-9270-459fb5e79441.png)
+![Used car sale data in CSV format](https://user-images.githubusercontent.com/241452/83806228-77598880-a6b1-11ea-86f2-b4561c62f704.png)
 
 Note the column names - we will use them in the next step.
 
