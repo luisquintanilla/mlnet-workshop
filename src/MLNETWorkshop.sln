@@ -9,11 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Web", "Web\Web.csproj", "{5
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{87EF0105-0E94-4E41-B51B-FE8D60F59EBA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTests", "DataTests\DataTests.csproj", "{4D24584B-34DF-41E9-9619-99BFBEBA2E79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataTests", "..\test\DataTests\DataTests.csproj", "{4D24584B-34DF-41E9-9619-99BFBEBA2E79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelTests", "ModelTests\ModelTests.csproj", "{592559C1-EE44-46BB-A295-65FE937056B8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ModelTests", "..\test\ModelTests\ModelTests.csproj", "{592559C1-EE44-46BB-A295-65FE937056B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests.Common", "Tests.Common\Tests.Common.csproj", "{C783FB6B-1D95-46C0-B978-7EE2EA20C97D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests.Common", "..\test\Tests.Common\Tests.Common.csproj", "{C783FB6B-1D95-46C0-B978-7EE2EA20C97D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{ACF5C619-35A8-42D6-866B-317318C2C3C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -100,6 +102,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4D24584B-34DF-41E9-9619-99BFBEBA2E79} = {ACF5C619-35A8-42D6-866B-317318C2C3C5}
+		{592559C1-EE44-46BB-A295-65FE937056B8} = {ACF5C619-35A8-42D6-866B-317318C2C3C5}
+		{C783FB6B-1D95-46C0-B978-7EE2EA20C97D} = {ACF5C619-35A8-42D6-866B-317318C2C3C5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35027409-DCB3-4AFF-A2CE-B4423AB0E613}
