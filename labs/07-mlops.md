@@ -6,11 +6,9 @@ We will in addition look at some additional considerations such as data and mode
 ## Phase 7.1: Create our first GitHub Action workflow
 The first thing we want to do is to create a simple GitHub Action workflow which will be triggered to train a new model when a commit is pushed to our repository.
 
-To do so, navigate to your forked repo and click on the **Actions** tab
-**Add image here**
-
+To do so, navigate to your forked repo and click on the `Actions` tab
 On the page that appears, go ahead and select to set up a new .NET Core workflow
-**Add image here**
+![action](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/action-dotnet-core-workflow.PNG)
 
 GitHub will provide you with a template workflow that is intended to restore, build and test a .NET Core app. 
 
@@ -79,7 +77,7 @@ To mount the fileshare as part of our workflow, add the following just before th
 To be able to mount the fileshare, we'll also need to add the access key to the Azure Storage Container as a secret.
 To add a secret, navigate to the `Settings` tab and select `Secrets` in the left menu:
 
-**Add image here**
+![action](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/secrets.PNG)
 
 Click on `New Secret` and add a new secret with the name of `STORAGEKEY`. The value will be provided to you by the facilitators of the workshop.
 
