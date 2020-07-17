@@ -87,7 +87,7 @@ To do so, go ahead and add the following to your GitHub Action's workflow file:
 ```
     - name: Train
       working-directory: 'src/TrainConsole'
-      run: dotnet run --project TrainConsole.csproj.csproj
+      run: dotnet run --project TrainConsole.csproj
 ```
 
 Your workflow file should now look as below. The GitHub action should take a couple of minutes to complete, and if all is setup correctly be successful. 
@@ -122,7 +122,7 @@ jobs:
       run: dotnet build src/MLNETWorkshop.sln --configuration Release --no-restore
     - name: Train
       working-directory: 'src/TrainConsole'
-      run: dotnet run --project TrainConsole.csproj.csproj 
+      run: dotnet run --project TrainConsole.csproj 
 ```
 
 ## Phase 7.4: Data and Model Tests
