@@ -77,10 +77,51 @@ To mount the fileshare as part of our workflow, add the following just before th
 To be able to mount the fileshare, we'll also need to add the access key to the Azure Storage Container as a secret.
 To add a secret, navigate to the `Settings` tab and select `Secrets` in the left menu:
 
-![action](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/secrets.PNG)
+![secrets](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/secrets.PNG)
 
 Click on `New Secret` and add a new secret with the name of `STORAGEKEY`. The value will be provided to you by the facilitators of the workshop.
 
 ## Phase 7.3: Train our model as part of our CI pipeline
-To 
+In order to automatically train our model, we'll need to use the `dotnet run` command to run our console application.
+To do so, go ahead and add the following to your GitHub Action's workflow file:
+```
+    - name: Train
+      working-directory: 'src/TrainConsole'
+      run: dotnet run --project TrainConsole.csproj.csproj
+```
+
+Your workflow file should now look as below. The GitHub action should take a couple of minutes to complete, and if all is setup correctly be successfull. 
+
+```
+name: .NET Core
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:        
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101   
+    - name: 'Create mount points'
+      run: 'sudo mkdir /media/data'
+    - name: 'Map disk drive to Azure Files share folder'
+      run: 'sudo mount -t cifs //ndcmelbourne.file.core.windows.net/data /media/data -o vers=3.0,username=ndcmelbourne,password=${{ secrets.STORAGEKEY }},dir_mode=0777,file_mode=0777'
+    - name: Install dependencies
+      run: dotnet restore src/MLNETWorkshop.sln
+    - name: Build
+      run: dotnet build src/MLNETWorkshop.sln --configuration Release --no-restore
+    - name: Train
+      working-directory: 'src/TrainConsole'
+      run: dotnet run --project TrainConsole.csproj.csproj 
+```
 
