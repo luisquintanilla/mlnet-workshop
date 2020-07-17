@@ -131,3 +131,8 @@ There are two types of tests that we will be looking into:
 
 1. **Data validation tests** to ensure the integrity of our training data 
 2. **Model tests** to validate the quality of our model
+
+### Data tests
+The data we use to train our model consists of a number of features, such as price, model year, milage and so forth. To ensure the quality of our model, it's important to validate that the data is sound prior to model training. Things we may want to verify are for example that we don't have any negative prices our milage values and that we at least have a minimum number of rows. 
+
+### Model tests
