@@ -50,14 +50,22 @@ Great work, we're now able to compile our training project as part of our CI pip
 One way to solve this problem is to upload our data to an Azure FileShare and mount the fileshare on our Ubuntu build agent as part of each build so that the training application can access it. An Azure FileShare can handle concurrent load meaning that multiple build agents can read the data simultaneously. 
 
 In order to achieve this we need to do two things:
-1) Change the path our data
+1) Change the path to our data
 2) Mount the fileshare as part of our Github workflow
 
 ### Change the path to our data
-Navigate to the `Program.cs` file and change the `TRAIN_DATA_PATH` variable accordingly:
+Navigate to the `Program.cs` file and change the `TRAIN_DATA_PATH` variable to:
 ```
-        private static string TRAIN_DATA_FILEPATH = @"/media/data/true_car_listings.csv";
+  private static string TRAIN_DATA_FILEPATH = @"/media/data/true_car_listings.csv";
 ```
+
+In addition, we'll also need to change the path to where we store our model. To do so, change the `MODEL_FILEPATH` variable to
+```
+  private static string MODEL_FILEPATH = MLConfiguration.GetModelPath();
+```
+
+What this will do is to store the model on the fileshare as well, with a unique id matching the Git commit sha.
+Commit the changes to your master branch and push the changes to your repo.
 
 ### Mount the fileshare as part of our GitHub workflow
 To mount the fileshare as part of our workflow, add the following just before the `Install dependencies` step and commit the changes to your master branch.
@@ -76,5 +84,5 @@ To add a secret, navigate to the `Settings` tab and select `Secrets` in the left
 Click on `New Secret` and add a new secret with the name of `STORAGEKEY`. The value will be provided to you by the facilitators of the workshop.
 
 ## Phase 7.3: Train our model as part of our CI pipeline
-
+To 
 
