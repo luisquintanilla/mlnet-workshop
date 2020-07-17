@@ -5,6 +5,7 @@ In this section you'll set up your environment to build machine learning applica
 ## Requirements
 
 - [Git(Optional)](https://git-scm.com/)
+- GitHub account 
 
 ### Windows
 
@@ -18,15 +19,14 @@ In this section you'll set up your environment to build machine learning applica
 - [Visual Studio Code (Optional)](https://code.visualstudio.com/Download)
 - [.NET Core 2.1 SDK](https://aka.ms/download-netcore-21)
 
-### Clone or download the starter application
+### Fork the repo
 
-We've set up an initial project for you to start from. You just need to clone this repo to your machine and then open it up in Visual Studio or your editor of choice. A simple way to clone the application is to run this command from a command line terminal:
-
+We've set up an initial project for you to start from. To get started, please complete the following steps:
+- Fork the repo (top right-corner)
+- Clone your forked repo locally, e.g. by running the following command (replace luisquintanilla with your GitHub username)
 ```powershell
 git clone https://github.com/luisquintanilla/mlnet-workshop
 ```
-
-Alternatively, you can download a [zipped version of the project](https://github.com/luisquintanilla/mlnet-workshop/archive/master.zip) and unzip that.
 
 Once you've done this, change directories to the *mlnet-workshop/src* folder where you'll find the *MLNETWorkshop.sln* file. Open the solution. You should see three projects, similar to what's shown here:
 
