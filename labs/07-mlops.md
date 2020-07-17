@@ -135,4 +135,16 @@ There are two types of tests that we will be looking into:
 ### Data tests
 The data we use to train our model consists of a number of features, such as price, model year, milage and so forth. To ensure the quality of our model, it's important to validate that the data is sound prior to model training. Things we may want to verify are for example that we don't have any negative prices our milage values and that we at least have a minimum number of rows. 
 
+- Point in the right direction
+- Add data tests
+- Commit
+- Add step to workflow - commit
+
 ### Model tests
+
+
+## Phase 7.5 Deployment - upload our model as an artifact
+TBD - upload as an artifact
+
+## Phase 7.6 - Consume our model 
+
