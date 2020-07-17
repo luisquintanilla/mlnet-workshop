@@ -90,7 +90,7 @@ To do so, go ahead and add the following to your GitHub Action's workflow file:
       run: dotnet run --project TrainConsole.csproj.csproj
 ```
 
-Your workflow file should now look as below. The GitHub action should take a couple of minutes to complete, and if all is setup correctly be successfull. 
+Your workflow file should now look as below. The GitHub action should take a couple of minutes to complete, and if all is setup correctly be successful. 
 
 ```
 name: .NET Core
