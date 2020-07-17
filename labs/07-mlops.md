@@ -81,7 +81,7 @@ To add a secret, navigate to the `Settings` tab and select `Secrets` in the left
 
 Click on `New Secret` and add a new secret with the name of `STORAGEKEY`. The value will be provided to you by the facilitators of the workshop.
 
-## Phase 7.3: Train our model as part of our CI pipeline
+## Phase 7.3: Add model training to our GitHub workflow
 In order to automatically train our model, we'll need to use the `dotnet run` command to run our console application.
 To do so, go ahead and add the following to your GitHub Action's workflow file:
 ```
@@ -125,3 +125,9 @@ jobs:
       run: dotnet run --project TrainConsole.csproj.csproj 
 ```
 
+## Phase 7.4: Data and Model Tests
+Well done! If you've made it this far, you've succesfully setup a workflow that automatically trains your model on new commits. However, as with any well architected software application, we also require automated tests to be run to ensure that the application works as expected. Similarly we can add tests to our model training workflow. 
+There are two types of tests that we will be looking into:
+
+1. **Data validation tests** to ensure the integrity of our training data 
+2. **Model tests** to validate the quality of our model
