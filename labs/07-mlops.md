@@ -398,7 +398,23 @@ jobs:
 If you commit and push these changes to your fork, you should see the workflow being kicked off and succesfully completing within 5 min.
 
 ## Phase 7.5 Deployment - upload our model as an artifact
-TBD - upload as an artifact
+Congratulations! Your CI workflow is looking fantastic. In a real-world example, we would now do two things:
+1) Register our model in a model repository of our choosing
+2) Implement a CD workflow to automatically deploy our model to a test environment
+
+There are a number of ways we can deploy our model, e.g. in a Docker Container, embedded in an ASP.NET Core API or simple uploaded to an Azure Storage Container which can be consumed by an application elsewhere. Since we don't want to require an Azure subscription as part of this workflow, we're going to finalize this phase by uploading the model as a build artifact, such that we can always come back to this build and grab this version of the model if needed.
+
+To do so, add the following to the `dotnet-core.yml` file, right at the end:
+
+```
+    - name: Upload model as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: model.zip
+        path: /media/data/${{ github.run_id }}.zip
+```
+
+Commit and push these changes to your repository. Once the workflow build completes, you should now see an artifact named `model.zip` which contains your trained model.
 
 ## Phase 7.6 - Consume our model 
 
