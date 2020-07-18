@@ -3,6 +3,7 @@
 In this section you'll learn how to automate the model lifecycle from training to model deployment. 
 We will in addition look at some additional considerations such as data and model tests.
 
+
 ## Phase 7.1: Create our first GitHub Action workflow
 The first thing we want to do is to create a simple GitHub Action workflow which will be triggered to train a new model when a commit is pushed to our repository.
 
@@ -42,6 +43,7 @@ jobs:
 
 If all goes well, a successful build should complete in less than a minute.
 
+
 ## Phase 7.2: Set up our data source
 Great work, we're now able to compile our training project as part of our CI pipeline to ensure the integrity of our system. The next step is to automatically kick-off the training of our machine learning model. Before we can do that do we need to address a challenge we will face, which is the location of our training data. So far in this workshop you've had your training data available on disk, or as part of the GitHub repository. However, in many cases the training data is of 1-100 Gb large which makes it non-feasible to store it in GitHub. 
 
@@ -80,6 +82,7 @@ To add a secret, navigate to the `Settings` tab and select `Secrets` in the left
 ![secrets](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/secrets.PNG)
 
 Click on `New Secret` and add a new secret with the name of `STORAGEKEY`. The value will be provided to you by the facilitators of the workshop.
+
 
 ## Phase 7.3: Add model training to our GitHub workflow
 In order to automatically train our model, we'll need to use the `dotnet run` command to run our console application.
@@ -124,6 +127,7 @@ jobs:
       working-directory: 'src/TrainConsole'
       run: dotnet run --project TrainConsole.csproj 
 ```
+
 
 ## Phase 7.4: Data and Model Tests
 Well done! If you've made it this far, you've succesfully setup a workflow that automatically trains your model on new commits. However, as with any well architected software application, we also require automated tests to be run to ensure that the application works as expected. Similarly we can add tests to our model training workflow. 
@@ -397,7 +401,8 @@ jobs:
 
 If you commit and push these changes to your fork, you should see the workflow being kicked off and succesfully completing within 5 min.
 
-## Phase 7.5 Deployment - upload our model as an artifact
+
+## Phase 7.5 Deployment/Upload our model as an artifact
 Congratulations! Your CI workflow is looking fantastic. In a real-world example, we would now do two things:
 1) Register our model in a model repository of our choosing
 2) Implement a CD workflow to automatically deploy our model to a test environment
@@ -416,7 +421,8 @@ To do so, add the following to the `dotnet-core.yml` file, right at the end:
 
 Commit and push these changes to your repository. Once the workflow build completes, you should now see an artifact named `model.zip` which contains your trained model.
 
-## Phase 7.6 - Consume our model 
+
+## Phase 7.6 - Consume our model
 If we imagine for a second that our CI/CD workflow also publishes our trained model to let's say a test container in an Azure Storage Account. We would then be able to consume that model when doing contract or exploratory testing in a test environment prior to a production deployment. For your convinience, we've published a model to an Azure Storage Account that you can consume as part of the `Web` application in this workshop.
 
 To be able to consume your model from a URI, locate the `Startup.cs` class within the `Web` project and replace the following line:
