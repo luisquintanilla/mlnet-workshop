@@ -2,13 +2,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using Shared;
 
 namespace DataTests
 {
     [TestClass]
     public class DataValidationTests
     {
-        private static IEnumerable<ModelInput> Rows;
         private static readonly string ModelPath = "";
 
         [ClassInitialize]
