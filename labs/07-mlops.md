@@ -127,13 +127,86 @@ jobs:
 
 ## Phase 7.4: Data and Model Tests
 Well done! If you've made it this far, you've succesfully setup a workflow that automatically trains your model on new commits. However, as with any well architected software application, we also require automated tests to be run to ensure that the application works as expected. Similarly we can add tests to our model training workflow. 
-There are two types of tests that we will be looking into:
+
+There are two types of tests that we will be looking into today:
 
 1. **Data validation tests** to ensure the integrity of our training data 
-2. **Model tests** to validate the quality of our model
+2. **Model tests** to validate the quality of our trained model
 
-### Data tests
-The data we use to train our model consists of a number of features, such as price, model year, milage and so forth. To ensure the quality of our model, it's important to validate that the data is sound prior to model training. Things we may want to verify are for example that we don't have any negative prices our milage values and that we at least have a minimum number of rows. 
+### Data validation tests
+To train our model, we use a dataset that consists of a number of features, such as price, the year the car was made, milage and so forth. To ensure the quality of our model, it's important to validate that the data is sound. We may for example want to verify that the dataset does not contain any negative numbers or other invalid data points. 
+
+At our disposal, we have a `DataValidationsTests.cs` test class in the `DataTests` project (located under the `Tests` folder in the solutions explorer). 
+This test class contains a number of tests that we will implement that will ultimately verify our dataset.
+
+The first thing we would like to do is to set the correct path to our data (which will be located on the Azure FileShare as mentioned in previous steps).
+Replace the `TRAIN_DATA_FILEPATH` variable located in `DataValidationTests` with
+
+```
+  private static string TRAIN_DATA_FILEPATH = @"/media/data/true_car_listings.csv";
+```
+
+The next thing we would like to do is to fill out the `Initalize` method. This method will be used to load the data using the given path and convert all rows to an enumerable of `ModelInput` rows. Change your `Initialize` method to below. Please note the `Rows` private member variable that will be used in the tests.
+
+```
+        private static IEnumerable<ModelInput> Rows;
+        
+        [ClassInitialize]
+        public static void Initialize(TestContext testContext)
+        {
+            var mlContext = new MLContext();
+            var data = mlContext.Data.LoadFromTextFile<ModelInput>(TRAIN_DATA_FILEPATH, hasHeader: true, separatorChar: ',');
+
+            Rows = mlContext.Data.CreateEnumerable<ModelInput>(data, false);
+        }
+```
+
+With the `Initialize` method setup, we're ready to start implementing our tests. 
+Let's do two together, and then let's see if you're able to implement the other two yourself.
+
+To verify a valid year range and that we don't have any negative prices in our dataset we can implement `VerifyValidPrice()` and `VerifyValidYear()` as follows:
+
+```
+        [TestMethod]
+        public void VerifyValidPrice()
+        {
+            var hasNegativePrice = Rows.Any(x => x.Price < 0);
+
+            hasNegativePrice.Should().BeFalse();
+        }
+
+        [TestMethod]
+        public void VerifyValidYear()
+        {
+            var hasValidYears = Rows.All(x => x.Year > 1950 && x.Year < DateTime.Now.Year + 1);
+
+            hasValidYears.Should().BeTrue();
+        }
+```
+
+Based on these tests, take a couple of minutes and see if you can implement `VerifyValidMilage()` and `VerifyMinimumNumberOfRows()` yourself (assume that we need at least 10,000 rows).
+
+The final two tests should look something like this:
+
+```
+        [TestMethod]
+        public void VerifyValidMilage()
+        {
+            var hasInvalidMilage = Rows.Any(x => x.Mileage < 0);
+
+            hasInvalidMilage.Should().BeFalse();
+        }
+        
+        [TestMethod]
+        public void VerifyMinimumNumberOfRows()
+        {
+            var rowCount = Rows.Count();
+
+            rowCount.Should().BeGreaterThan(10000);
+        }        
+```
+
+
 
 - Point in the right direction
 - Add data tests
