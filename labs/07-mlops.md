@@ -206,12 +206,56 @@ The final two tests should look something like this:
         }        
 ```
 
+Excellent work so far. Go ahead and commit your changes and push them to your fork either by using a tool of your choice such as GitHub Desktop, Visual Studio or the Git CLI.
+The next step is to add our data tests to our CI workflow to make sure they are run before the model training.
 
+Do do so, open up the `dotnet-core.yml` file under `.github/workflows` and add the following just prior to `Train` step:
 
-- Point in the right direction
-- Add data tests
-- Commit
-- Add step to workflow - commit
+```
+    - name: Data Tests
+      working-directory: 'test/DataTests'     
+      run: dotnet test DataTests.csproj
+```
+
+Your workflow file should now look as follows:
+
+```
+name: .NET Core
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:        
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101   
+    - name: 'Create mount points'
+      run: 'sudo mkdir /media/data'
+    - name: 'Map disk drive to Azure Files share folder'
+      run: 'sudo mount -t cifs //ndcmelbourne.file.core.windows.net/data /media/data -o vers=3.0,username=ndcmelbourne,password=${{ secrets.STORAGEKEY }},dir_mode=0777,file_mode=0777'
+    - name: Install dependencies
+      run: dotnet restore src/MLNETWorkshop.sln
+    - name: Build
+      run: dotnet build src/MLNETWorkshop.sln --configuration Release --no-restore
+    - name: Train
+      working-directory: 'src/TrainConsole'
+      run: dotnet run --project TrainConsole.csproj 
+    - name: Data Tests
+      working-directory: 'test/DataTests'     
+      run: dotnet test DataTests.csproj      
+```
+
+Commit your changes and push them to GitHub. This should kick of the workflow under the `Actions` tab and within 3-5 min you should seee a successful build if all goes well.
 
 ### Model tests
 
