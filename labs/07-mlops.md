@@ -43,6 +43,7 @@ jobs:
 
 If all goes well, a successful build should complete in less than a minute.
 
+![7-1-build](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/7-1-build.PNG)
 
 ## Phase 7.2: Set up our data source
 Great work, we are now able to compile our training project as part of our CI pipeline to ensure the integrity of our system. The next step is to automatically kick-off the training of our machine learning model. Before we can do that, we do we need to address an issue, which is the location of our training data. So far in this workshop you have had your training data available on disk, or as part of the GitHub repository. However, in many cases the training data is of 1-100 Gb large which makes it non-feasible to store it in GitHub. 
