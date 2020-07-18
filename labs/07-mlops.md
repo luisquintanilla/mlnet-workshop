@@ -60,16 +60,18 @@ Navigate to the `Program.cs` file and change the `TRAIN_DATA_PATH` variable to:
   private static string TRAIN_DATA_FILEPATH = @"/media/data/true_car_listings.csv";
 ```
 
-In addition, we'll also need to change the path to where we store our model. To do so, change the `MODEL_FILEPATH` variable to
+In addition, we'll also need to change the path to where we store our model. To do so, change the `MODEL_FILEPATH` variable to:
 ```
   private static string MODEL_FILEPATH = MLConfiguration.GetModelPath();
 ```
 
-What this will do is to store the model on the fileshare as well, with a unique id matching the Git commit sha.
+What this will do is to store the model on the fileshare, with a unique id matching the Git commit SHA.
 Commit the changes to your master branch and push the changes to your repo.
 
 ### Mount the fileshare as part of our GitHub workflow
-To mount the fileshare as part of our workflow, add the following just before the `Install dependencies` step and commit the changes to your master branch.
+To mount the fileshare as part of our workflow, open the `dotnet-core.yml' file located under `.github/workflows in your repo. 
+Add the following just before the `Install dependencies` step and commit and push the changes to your master branch.
+
 ```
  - name: 'Create mount points'
       run: 'sudo mkdir /media/data'
@@ -77,7 +79,40 @@ To mount the fileshare as part of our workflow, add the following just before th
       run: 'sudo mount -t cifs //ndcmelbourne.file.core.windows.net/data /media/data -o vers=3.0,username=ndcmelbourne,password=${{ secrets.STORAGEKEY }},dir_mode=0777,file_mode=0777'
 ```
 
-To be able to mount the fileshare, we will also need to add the access key to the Azure Storage Container as a secret.
+Your complete `dotnet-core.yml` file should now look like:
+
+```
+name: .NET Core
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:        
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101   
+    - name: 'Create mount points'
+      run: 'sudo mkdir /media/data'
+    - name: 'Map disk drive to Azure Files share folder'
+      run: 'sudo mount -t cifs //ndcmelbourne.file.core.windows.net/data /media/data -o vers=3.0,username=ndcmelbourne,password=${{ secrets.STORAGEKEY }},dir_mode=0777,file_mode=0777'    
+    - name: Install dependencies
+      run: dotnet restore src/MLNETWorkshop.sln
+    - name: Build
+      run: dotnet build src/MLNETWorkshop.sln --configuration Release --no-restore
+
+```
+
+To mount the fileshare, we will also need to add the access key to the Azure Storage Container as a GitHub secret.
 To add a secret, navigate to the `Settings` tab and select `Secrets` in the left menu:
 
 ![secrets](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/secrets.PNG)
