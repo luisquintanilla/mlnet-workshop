@@ -9,7 +9,7 @@ namespace DataTests
     [TestClass]
     public class DataValidationTests
     {
-        private static readonly string ModelPath = "";
+        private static string TRAIN_DATA_FILEPATH = "";
 
         [ClassInitialize]
         public static void Initialize(TestContext testContext)
