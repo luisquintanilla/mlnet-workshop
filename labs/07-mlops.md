@@ -122,14 +122,14 @@ Click on `New Secret` and add a new secret with the name of `STORAGEKEY`. The va
 
 ## Phase 7.3: Add model training to our GitHub workflow
 To automatically train our model, we will need to use the `dotnet run` command to run our console application.
-To do so, go ahead and add the following to your GitHub Action's workflow file:
+To do so, go ahead and add the following to your GitHub Action's workflow file. Commit and push the changes to your master branch
 ```
     - name: Train
       working-directory: 'src/TrainConsole'
       run: dotnet run --project TrainConsole.csproj
 ```
 
-Your workflow file should now look as below. The GitHub action should take a couple of minutes to complete, and if all is setup correctly be successful. 
+Your complete `dotnet-core.yml` file should now look like: 
 
 ```
 name: .NET Core
@@ -164,6 +164,13 @@ jobs:
       run: dotnet run --project TrainConsole.csproj 
 ```
 
+The workflow should take about 10-15 minutes to complete, and if all is setup correctly should yield a green build.
+
+![7-4-build](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/7-4-build.PNG)
+
+If you click on the workflow that has been run, we can see the progress of each step
+
+![7-4-build-details](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/7-4-build-details.PNG)
 
 ## Phase 7.4: Data and Model Tests
 Well done! If you have made it this far, you've successfully setup a workflow that automatically trains your model on new commits. However, as with any well architected software application, we also require automated tests to be run to ensure that the application works as expected. Similarly, we can add tests to our model training workflow. 
