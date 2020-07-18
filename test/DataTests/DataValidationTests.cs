@@ -2,14 +2,16 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using Shared;
+using System.Linq;
+using FluentAssertions;
 
 namespace DataTests
 {
     [TestClass]
     public class DataValidationTests
     {
-        private static IEnumerable<ModelInput> Rows;
-        private static readonly string ModelPath = "";
+        private static string TRAIN_DATA_FILEPATH = "";
 
         [ClassInitialize]
         public static void Initialize(TestContext testContext)

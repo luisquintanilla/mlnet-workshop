@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace Tests.Common
+namespace Shared
 {
     public class MLConfiguration
     {
