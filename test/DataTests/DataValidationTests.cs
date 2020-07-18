@@ -3,6 +3,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using Shared;
+using System.Linq;
+using FluentAssertions;
 
 namespace DataTests
 {
