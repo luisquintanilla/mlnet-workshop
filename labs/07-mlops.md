@@ -258,6 +258,11 @@ jobs:
 Commit your changes and push them to GitHub. This should kick of the workflow under the `Actions` tab and within 3-5 min you should seee a successful build if all goes well.
 
 ### Model tests
+Brilliant, we're now able to run data validation tests as part of our workflow, but what our model tests? Let's have a look.
+The model tests will run after we've trained our model in order to do some basic health checks. In more advanced scenarios, one may want to also compare the trained model to an existing model in production at this stage so that we can quickly determine if the model is worth investing additional time in or not.
+
+At our disposal we have the `ModelTests.cs` test class in the `ModelTests` project (located under the `Tests` folder in the solution).
+
 
 
 ## Phase 7.5 Deployment - upload our model as an artifact
