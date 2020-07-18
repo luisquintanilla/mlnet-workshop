@@ -431,4 +431,9 @@ with
   services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromUri(@"https://ndcmelbourne.blob.core.windows.net/model/MLModel.zip");
 ```
 
+To ensure that we're able to use the model now stored in the Azure Storage Accunt, set the startup project to Web and run the application. Fill in the form fields and select Predict Price.
+
+![Consume the model in web app](./media/consume-model.png)
+
+Congratulations! You've now mastered the art of MLOps.
 
