@@ -262,8 +262,140 @@ Brilliant, we're now able to run data validation tests as part of our workflow, 
 The model tests will run after we've trained our model in order to do some basic health checks. In more advanced scenarios, one may want to also compare the trained model to an existing model in production at this stage so that we can quickly determine if the model is worth investing additional time in or not.
 
 At our disposal we have the `ModelTests.cs` test class in the `ModelTests` project (located under the `Tests` folder in the solution).
+In this instance, we would like to run three tests on our model to ensure that it's able to correctly predict the price of a low-, mid- and high range car within a given interval.
 
+To do so, replace the content of the `ModelTests` class with the following:
 
+```
+        [TestMethod]
+        public void Given_LowRangeCar_ShouldEstimatePriceWithinRange()
+        {
+            //Arrange
+            var predictionEngine = GetPredictionEngine();
+
+            var input = new ModelInput
+            {
+                Year = 2006,
+                Mileage = 182248,
+                Make = "Chevrolet",
+                Model = "TrailBlazer4dr"
+            };
+
+            //Act
+            var pricePrediction = predictionEngine.Predict(input).Score;
+
+            //Assert
+            pricePrediction.Should().BeInRange(2000, 6000);
+        }
+
+        [TestMethod]
+        public void Given_MidRangeCar_ShouldEstimatePriceWithinRange()
+        {
+            //Arrange
+            var predictionEngine = GetPredictionEngine();
+
+            var input = new ModelInput
+            {
+                Year = 2013,
+                Mileage = 38343,
+                Make = "Acura",
+                Model = "TSX5-Speed"
+            };
+
+            //Act
+            var pricePrediction = predictionEngine.Predict(input).Score;
+
+            //Assert
+            pricePrediction.Should().BeInRange(13000, 18000);
+        }
+
+        [TestMethod]
+        public void Given_HighRangeCar_ShouldEstimatePriceWithinRange()
+        {
+            //Arrange
+            var predictionEngine = GetPredictionEngine();
+
+            var input = new ModelInput
+            {
+                Year = 2016,
+                Mileage = 20422,
+                Make = "Lexus",
+                Model = "GX"
+            };
+
+            //Act
+            var pricePrediction = predictionEngine.Predict(input).Score;
+
+            //Assert
+            pricePrediction.Should().BeInRange(47000, 54000);
+        }
+
+        private PredictionEngine<ModelInput, ModelOutput> GetPredictionEngine()
+        {
+            var modelPath = MLConfiguration.GetModelPath();
+
+            var mlContext = new MLContext();
+
+            var model = mlContext.Model.Load(modelPath, out var schema);
+
+            return mlContext.Model.CreatePredictionEngine<ModelInput, ModelOutput>(model, schema);
+        }
+```
+
+If we have a closer look at what we're doing here, we can see that we're using the `MLContext` from ML.NET to load the model from the Azure FileShare, which is where it's saved as part of our training. A `PredictionEngine` is thereafter created based on the `ModelInput` and `ModelOutput` schema created earlier. Using this `PredictionEngine` we are then able to make a prediction based on a number of different inputs and compare the result with what we would expect, in this case within a given range.
+
+Commit the changes to your fork and push the changes to GitHub.
+
+To ensure that these model tests are run as part of our workflow, add the following to your `dotnet-core.yml` file just after the `Train` step:
+
+```
+    - name: Model Tests
+      working-directory: 'test/ModelTests'      
+      run: dotnet test ModelTests.csproj   
+```
+
+Your workflow file should now look as the following:
+
+```
+name: .NET Core
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:        
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101   
+    - name: 'Create mount points'
+      run: 'sudo mkdir /media/data'
+    - name: 'Map disk drive to Azure Files share folder'
+      run: 'sudo mount -t cifs //ndcmelbourne.file.core.windows.net/data /media/data -o vers=3.0,username=ndcmelbourne,password=${{ secrets.STORAGEKEY }},dir_mode=0777,file_mode=0777'
+    - name: Install dependencies
+      run: dotnet restore src/MLNETWorkshop.sln
+    - name: Build
+      run: dotnet build src/MLNETWorkshop.sln --configuration Release --no-restore
+    - name: Train
+      working-directory: 'src/TrainConsole'
+      run: dotnet run --project TrainConsole.csproj 
+    - name: Data Tests
+      working-directory: 'test/DataTests'     
+      run: dotnet test DataTests.csproj   
+    - name: Model Tests
+      working-directory: 'test/ModelTests'      
+      run: dotnet test ModelTests.csproj       
+```
+
+If you commit and push these changes to your fork, you should see the workflow being kicked off and succesfully completing within 5 min.
 
 ## Phase 7.5 Deployment - upload our model as an artifact
 TBD - upload as an artifact
