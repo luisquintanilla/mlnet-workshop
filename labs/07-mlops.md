@@ -417,4 +417,18 @@ To do so, add the following to the `dotnet-core.yml` file, right at the end:
 Commit and push these changes to your repository. Once the workflow build completes, you should now see an artifact named `model.zip` which contains your trained model.
 
 ## Phase 7.6 - Consume our model 
+If we imagine for a second that our CI/CD workflow also publishes our trained model to let's say a test container in an Azure Storage Account. We would then be able to consume that model when doing contract or exploratory testing in a test environment prior to a production deployment. For your convinience, we've published a model to an Azure Storage Account that you can consume as part of the `Web` application in this workshop.
+
+To be able to consume your model from a URI, locate the `Startup.cs` class within the `Web` project and replace the following line:
+
+```
+   services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromFile(@"C:\Dev\MLModel.zip");
+```
+
+with
+
+```
+  services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromUri(@"https://ndcmelbourne.blob.core.windows.net/model/MLModel.zip");
+```
+
 
