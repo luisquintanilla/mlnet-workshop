@@ -35,7 +35,7 @@ Go ahead and clone this repo to your machine, then dive in and [get started](/la
 | [Phase #7](/labs/07-mlops.md) | Automate the ML Lifecycle with MLOps |
 
 
-## Addtional Scenarios 
+## Additional Scenarios 
 
 | Scenario | Topics |
 | ----- | ---- |
