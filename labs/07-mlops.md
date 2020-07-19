@@ -302,7 +302,8 @@ jobs:
       run: dotnet run --project TrainConsole.csproj    
 ```
 
-Commit your changes and push them to GitHub. This should kick of the workflow under the `Actions` tab and within 3-5 min you should see a successful build if all goes well.
+Commit your changes and push them to GitHub. This should kick of the workflow under the `Actions` tab and you should see a successfull build within about 10-15 min.
+
 
 ### Model tests
 Brilliant, we are now able to run data validation tests as part of our workflow, but what our model tests? Let us have a look.
