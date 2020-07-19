@@ -9,7 +9,7 @@ The first thing we want to do is to create a simple GitHub Action workflow which
 
 To do so, navigate to your forked repo and click on the `Actions` tab
 On the page that appears, go ahead and select to set up a new .NET Core workflow
-![action](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/action-dotnet-core-workflow.PNG)
+![action](./media/action-dotnet-core-workflow.PNG)
 
 GitHub will provide you with a template workflow that is intended to restore, build, and test a .NET Core app. 
 
@@ -43,7 +43,7 @@ jobs:
 
 If all goes well, a successful build should complete in less than a minute.
 
-![7-1-build](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/7-1-build.PNG)
+![7-1-build](./media/7-1-build.PNG)
 
 ## Phase 7.2: Set up our data source
 Great work, we are now able to compile our training project as part of our CI pipeline to ensure the integrity of our system. The next step is to automatically kick-off the training of our machine learning model. Before we can do that, we do we need to address an issue, which is the location of our training data. So far in this workshop you have had your training data available on disk, as part of the GitHub repository. However, in many cases the training data is of 1-100 Gb large which makes it non-feasible to store it in GitHub. 
@@ -115,7 +115,7 @@ jobs:
 To mount the fileshare, we will also need to add the access key to the Azure Storage Container as a GitHub secret.
 To add a secret, navigate to the `Settings` tab and select `Secrets` in the left menu:
 
-![secrets](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/secrets.PNG)
+![secrets](./media/secrets.PNG)
 
 Click on `New Secret` and add a new secret with the name of `STORAGEKEY`. The value will be provided to you by the facilitators of the workshop.
 
@@ -166,11 +166,11 @@ jobs:
 
 The workflow should take about 10-15 minutes to complete, and if all is set up correctly should yield a green build.
 
-![7-4-build](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/7-4-build.PNG)
+![7-4-build](./media/7-4-build.PNG)
 
 If you click on the workflow that has been run, we can see the progress of each step
 
-![7-4-build-details](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/7-4-build-details.PNG)
+![7-4-build-details](./media/7-4-build-details.PNG)
 
 ## Phase 7.4: Data and Model Tests
 Well done! If you have made it this far, you've successfully set up a workflow that automatically trains your model on new commits. However, as with any well architected software application, we also require automated tests to be run to ensure that the application works as expected. Similarly, we can add tests to our model training workflow. 
@@ -306,7 +306,7 @@ Commit your changes and push them to GitHub. This should kick of the workflow un
 
 If you click on the succcessfull workflow, you can inspect to see each build step and expand to see that our four data validation tests ran successfully.
 
-![7-4-data-tests](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/7-4-data-tests.PNG)
+![7-4-data-tests](./media/7-4-data-tests.PNG)
 
 ### Model tests
 Brilliant, we are now able to run data validation tests as part of our workflow, but what our model tests? Let us have a look.
