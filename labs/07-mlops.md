@@ -193,7 +193,7 @@ Replace the `TRAIN_DATA_FILEPATH` variable located in `DataValidationTests` with
   private static string TRAIN_DATA_FILEPATH = @"/media/data/true_car_listings.csv";
 ```
 
-The next thing we would like to do is to fill out the `Initialize` method. This method will be used to load the data using the given path and convert all rows to an enumerable of `ModelInput` rows. Change your `Initialize` method to below. Please note the `Rows` private member variable that will be used in the tests.
+The next thing we would like to do is to implement the `Initialize` method. This method will be used to load the dataset using and convert all rows into an enumerable of `ModelInput`. Change the `Initialize` method to the following noted below. Please note the `Rows` private member variable that will be used in the tests.
 
 ```
         private static IEnumerable<ModelInput> Rows;
