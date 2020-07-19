@@ -264,7 +264,7 @@ Do do so, open up the `dotnet-core.yml` file under `.github/workflows` and add t
       run: dotnet test DataTests.csproj
 ```
 
-Your workflow file should now look as follows:
+Your complete `dotnet-core.yml` file should now look like: 
 
 ```
 name: .NET Core
@@ -402,7 +402,7 @@ To ensure that these model tests are run as part of our workflow, add the follow
       run: dotnet test ModelTests.csproj   
 ```
 
-Your workflow file should now look like below:
+Your complete `dotnet-core.yml` file should now look like: 
 
 ```
 name: .NET Core
@@ -443,7 +443,7 @@ jobs:
       run: dotnet test ModelTests.csproj       
 ```
 
-If you commit and push these changes to your repo, you should see the workflow being kicked off and successfully completing within 5 min.
+Again, push and commit these changes to your repo. A successfull build should complete within 10-15 min, which you can observe under the `Actions` tab.
 
 
 ## Phase 7.5 Deployment/Upload our model as an artifact
