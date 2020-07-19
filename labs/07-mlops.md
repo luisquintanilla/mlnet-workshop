@@ -294,12 +294,12 @@ jobs:
       run: dotnet restore src/MLNETWorkshop.sln
     - name: Build
       run: dotnet build src/MLNETWorkshop.sln --configuration Release --no-restore
-    - name: Train
-      working-directory: 'src/TrainConsole'
-      run: dotnet run --project TrainConsole.csproj 
     - name: Data Tests
       working-directory: 'test/DataTests'     
-      run: dotnet test DataTests.csproj      
+      run: dotnet test DataTests.csproj        
+    - name: Train
+      working-directory: 'src/TrainConsole'
+      run: dotnet run --project TrainConsole.csproj    
 ```
 
 Commit your changes and push them to GitHub. This should kick of the workflow under the `Actions` tab and within 3-5 min you should see a successful build if all goes well.
