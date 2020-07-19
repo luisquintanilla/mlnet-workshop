@@ -517,6 +517,7 @@ jobs:
 ```
 Commit and push these changes to your repository. Once the workflow build completes, you should now see an artifact named `model.zip` which contains your trained model.
 
+![7-5-artifact](./media/7-5-artifact.PNG)
 
 ## Phase 7.6 - Consume our model
 If we imagine for a second that our CI/CD workflow also publishes our trained model to let's say a test container in an Azure Storage Account. We would then be able to consume that model when doing contract or exploratory testing in a test environment prior to a production deployment. For your convenience, we have published a model to an Azure Storage Account that you can consume as part of the `Web` application in this workshop.
