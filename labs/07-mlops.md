@@ -466,6 +466,52 @@ To do so, add the following to the `dotnet-core.yml` file, right at the end:
         path: /media/data/${{ github.run_id }}.zip
 ```
 
+Your complete `dotnet-core.yml` file should now look like: 
+
+```
+name: .NET Core
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:        
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101   
+    - name: 'Create mount points'
+      run: 'sudo mkdir /media/data'
+    - name: 'Map disk drive to Azure Files share folder'
+      run: 'sudo mount -t cifs //ndcmelbourne.file.core.windows.net/data /media/data -o vers=3.0,username=ndcmelbourne,password=${{ secrets.STORAGEKEY }},dir_mode=0777,file_mode=0777'    
+    - name: Install dependencies
+      run: dotnet restore src/MLNETWorkshop.sln
+    - name: Build
+      run: dotnet build src/MLNETWorkshop.sln --configuration Release --no-restore
+    - name: Data Tests
+      working-directory: 'test/DataTests'     
+      run: dotnet test DataTests.csproj      
+    - name: Train
+      working-directory: 'src/TrainConsole'
+      run: dotnet run --project TrainConsole.csproj  
+    - name: Model Tests
+      working-directory: 'test/ModelTests'      
+      run: dotnet test ModelTests.csproj    
+    - name: Upload model as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: model.zip
+        path: /media/data/${{ github.run_id }}.zip               
+
+```
 Commit and push these changes to your repository. Once the workflow build completes, you should now see an artifact named `model.zip` which contains your trained model.
 
 
