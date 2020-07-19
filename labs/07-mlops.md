@@ -9,7 +9,7 @@ The first thing we want to do is to create a simple GitHub Action workflow which
 
 To do so, navigate to your forked repo and click on the `Actions` tab
 On the page that appears, go ahead and select to set up a new .NET Core workflow
-![action](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/action-dotnet-core-workflow.PNG)
+![action](./media/action-dotnet-core-workflow.PNG)
 
 GitHub will provide you with a template workflow that is intended to restore, build, and test a .NET Core app. 
 
@@ -43,7 +43,7 @@ jobs:
 
 If all goes well, a successful build should complete in less than a minute.
 
-![7-1-build](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/7-1-build.PNG)
+![7-1-build](./media/7-1-build.PNG)
 
 ## Phase 7.2: Set up our data source
 Great work, we are now able to compile our training project as part of our CI pipeline to ensure the integrity of our system. The next step is to automatically kick-off the training of our machine learning model. Before we can do that, we do we need to address an issue, which is the location of our training data. So far in this workshop you have had your training data available on disk, as part of the GitHub repository. However, in many cases the training data is of 1-100 Gb large which makes it non-feasible to store it in GitHub. 
@@ -115,7 +115,7 @@ jobs:
 To mount the fileshare, we will also need to add the access key to the Azure Storage Container as a GitHub secret.
 To add a secret, navigate to the `Settings` tab and select `Secrets` in the left menu:
 
-![secrets](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/secrets.PNG)
+![secrets](./media/secrets.PNG)
 
 Click on `New Secret` and add a new secret with the name of `STORAGEKEY`. The value will be provided to you by the facilitators of the workshop.
 
@@ -166,11 +166,11 @@ jobs:
 
 The workflow should take about 10-15 minutes to complete, and if all is set up correctly should yield a green build.
 
-![7-4-build](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/7-4-build.PNG)
+![7-4-build](./media/7-4-build.PNG)
 
 If you click on the workflow that has been run, we can see the progress of each step
 
-![7-4-build-details](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/7-4-build-details.PNG)
+![7-4-build-details](./media/7-4-build-details.PNG)
 
 ## Phase 7.4: Data and Model Tests
 Well done! If you have made it this far, you've successfully set up a workflow that automatically trains your model on new commits. However, as with any well architected software application, we also require automated tests to be run to ensure that the application works as expected. Similarly, we can add tests to our model training workflow. 
@@ -302,8 +302,11 @@ jobs:
       run: dotnet run --project TrainConsole.csproj    
 ```
 
-Commit your changes and push them to GitHub. This should kick of the workflow under the `Actions` tab and you should see a successfull build within about 10-15 min.
+Commit your changes and push them to GitHub. This should kick of the workflow under the `Actions` tab and you should see a successful build within about 10-15 min.
 
+If you click on the succcessfull workflow, you can inspect to see each build step and expand to see that our four data validation tests ran successfully.
+
+![7-4-data-tests](./media/7-4-data-tests.PNG)
 
 ### Model tests
 Brilliant, we are now able to run data validation tests as part of our workflow, but what our model tests? Let us have a look.
@@ -443,7 +446,7 @@ jobs:
       run: dotnet test ModelTests.csproj       
 ```
 
-Again, push and commit these changes to your repo. A successfull build should complete within 10-15 min, which you can observe under the `Actions` tab.
+Again, push and commit these changes to your repo. A successful build should complete within 10-15 min, which you can observe under the `Actions` tab.
 
 
 ## Phase 7.5 Deployment/Upload our model as an artifact
@@ -463,6 +466,52 @@ To do so, add the following to the `dotnet-core.yml` file, right at the end:
         path: /media/data/${{ github.run_id }}.zip
 ```
 
+Your complete `dotnet-core.yml` file should now look like: 
+
+```
+name: .NET Core
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:        
+    - uses: actions/checkout@v2
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.101   
+    - name: 'Create mount points'
+      run: 'sudo mkdir /media/data'
+    - name: 'Map disk drive to Azure Files share folder'
+      run: 'sudo mount -t cifs //ndcmelbourne.file.core.windows.net/data /media/data -o vers=3.0,username=ndcmelbourne,password=${{ secrets.STORAGEKEY }},dir_mode=0777,file_mode=0777'    
+    - name: Install dependencies
+      run: dotnet restore src/MLNETWorkshop.sln
+    - name: Build
+      run: dotnet build src/MLNETWorkshop.sln --configuration Release --no-restore
+    - name: Data Tests
+      working-directory: 'test/DataTests'     
+      run: dotnet test DataTests.csproj      
+    - name: Train
+      working-directory: 'src/TrainConsole'
+      run: dotnet run --project TrainConsole.csproj  
+    - name: Model Tests
+      working-directory: 'test/ModelTests'      
+      run: dotnet test ModelTests.csproj    
+    - name: Upload model as artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: model.zip
+        path: /media/data/${{ github.run_id }}.zip               
+
+```
 Commit and push these changes to your repository. Once the workflow build completes, you should now see an artifact named `model.zip` which contains your trained model.
 
 

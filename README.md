@@ -32,6 +32,7 @@ Go ahead and clone this repo to your machine, then dive in and [get started](/la
 | [Phase #4](/labs/04-evaluate.md) | Evaluate model performance |
 | [Phase #5](/labs/05-save-model.md) | Save the ML.NET model |
 | [Phase #6](/labs/06-consume-model.md) | Consume the model in a web app |
+| [Phase #7](/labs/07-mlops.md) | Automate the ML Lifecycle with MLOps |
 
 
 ## Addtional Scenarios 
@@ -39,4 +40,3 @@ Go ahead and clone this repo to your machine, then dive in and [get started](/la
 | Scenario | Topics |
 | ----- | ---- |
 | [Deep Learning](/additional-scenarios/deep-learning.md) | Learn about deep learning, build an image classification model |
-| [MLOps](/additional-scenarios/mlops.md) | Learn about MLOps |
