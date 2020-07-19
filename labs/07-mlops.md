@@ -302,7 +302,7 @@ jobs:
       run: dotnet run --project TrainConsole.csproj    
 ```
 
-Commit your changes and push them to GitHub. This should kick of the workflow under the `Actions` tab and you should see a successfull build within about 10-15 min.
+Commit your changes and push them to GitHub. This should kick of the workflow under the `Actions` tab and you should see a successful build within about 10-15 min.
 
 If you click on the succcessfull workflow, you can inspect to see each build step and expand to see that our four data validation tests ran successfully.
 
@@ -446,7 +446,7 @@ jobs:
       run: dotnet test ModelTests.csproj       
 ```
 
-Again, push and commit these changes to your repo. A successfull build should complete within 10-15 min, which you can observe under the `Actions` tab.
+Again, push and commit these changes to your repo. A successful build should complete within 10-15 min, which you can observe under the `Actions` tab.
 
 
 ## Phase 7.5 Deployment/Upload our model as an artifact
