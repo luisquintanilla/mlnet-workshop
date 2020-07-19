@@ -304,6 +304,9 @@ jobs:
 
 Commit your changes and push them to GitHub. This should kick of the workflow under the `Actions` tab and you should see a successfull build within about 10-15 min.
 
+If you click on the succcessfull workflow, you can inspect to see each build step and expand to see that our four data validation tests ran successfully.
+
+![7-4-data-tests](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/7-4-data-tests.PNG)
 
 ### Model tests
 Brilliant, we are now able to run data validation tests as part of our workflow, but what our model tests? Let us have a look.
