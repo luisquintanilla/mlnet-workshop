@@ -432,12 +432,12 @@ jobs:
       run: dotnet restore src/MLNETWorkshop.sln
     - name: Build
       run: dotnet build src/MLNETWorkshop.sln --configuration Release --no-restore
-    - name: Train
-      working-directory: 'src/TrainConsole'
-      run: dotnet run --project TrainConsole.csproj 
     - name: Data Tests
       working-directory: 'test/DataTests'     
-      run: dotnet test DataTests.csproj   
+      run: dotnet test DataTests.csproj        
+    - name: Train
+      working-directory: 'src/TrainConsole'
+      run: dotnet run --project TrainConsole.csproj  
     - name: Model Tests
       working-directory: 'test/ModelTests'      
       run: dotnet test ModelTests.csproj       
