@@ -164,7 +164,7 @@ jobs:
       run: dotnet run --project TrainConsole.csproj 
 ```
 
-The workflow should take about 10-15 minutes to complete, and if all is setup correctly should yield a green build.
+The workflow should take about 10-15 minutes to complete, and if all is set up correctly should yield a green build.
 
 ![7-4-build](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/7-4-build.PNG)
 
@@ -173,7 +173,7 @@ If you click on the workflow that has been run, we can see the progress of each 
 ![7-4-build-details](https://github.com/aslotte/mlnet-workshop/blob/master/labs/media/7-4-build-details.PNG)
 
 ## Phase 7.4: Data and Model Tests
-Well done! If you have made it this far, you've successfully setup a workflow that automatically trains your model on new commits. However, as with any well architected software application, we also require automated tests to be run to ensure that the application works as expected. Similarly, we can add tests to our model training workflow. 
+Well done! If you have made it this far, you've successfully set up a workflow that automatically trains your model on new commits. However, as with any well architected software application, we also require automated tests to be run to ensure that the application works as expected. Similarly, we can add tests to our model training workflow. 
 
 There are two types of tests that we will be looking into today:
 
@@ -208,7 +208,7 @@ The next thing we would like to do is to implement the `Initialize` method. This
         }
 ```
 
-With the `Initialize` method setup, we are ready to start implementing our tests. 
+With the `Initialize` method set up, we are ready to start implementing our tests. 
 Let us complete two together, and let us then see if you are able to implement the other two yourself.
 
 To verify a valid year range and that we don't have any negative prices in our dataset we can implement `VerifyValidPrice()` and `VerifyValidYear()` as follows:
