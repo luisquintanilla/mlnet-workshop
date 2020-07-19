@@ -304,7 +304,7 @@ jobs:
 
 Commit your changes and push them to GitHub. This should kick of the workflow under the `Actions` tab and you should see a successful build within about 10-15 min.
 
-If you click on the succcessfull workflow, you can inspect to see each build step and expand to see that our four data validation tests ran successfully.
+If you click on the succcessful workflow, you can inspect to see each build step and expand to see that our four data validation tests ran successfully.
 
 ![7-4-data-tests](./media/7-4-data-tests.PNG)
 
@@ -448,6 +448,9 @@ jobs:
 
 Again, push and commit these changes to your repo. A successful build should complete within 10-15 min, which you can observe under the `Actions` tab.
 
+If you click on the succcessful workflow, you can inspect to see each build step and expand to see that our three model tests ran successfully.
+
+![7-4-model-tests](./media/7-4-model-tests.PNG)
 
 ## Phase 7.5 Deployment/Upload our model as an artifact
 Congratulations! Your CI workflow is looking fantastic. In a real-world example, we would now do two things:
