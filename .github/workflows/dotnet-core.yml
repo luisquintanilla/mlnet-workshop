@@ -25,6 +25,9 @@ jobs:
       run: dotnet restore src/MLNETWorkshop.sln
     - name: Build
       run: dotnet build src/MLNETWorkshop.sln --configuration Release --no-restore
+    - name: Data Tests
+      working-directory: 'test/DataTests'     
+      run: dotnet test DataTests.csproj      
     - name: Train
       working-directory: 'src/TrainConsole'
       run: dotnet run --project TrainConsole.csproj      
