@@ -49,7 +49,7 @@ First, we need to add a few NuGet packages to the `ONNXConsole` project.
 
 If you're using Visual Studio, right click on the project name and select **Manage NuGet Dependencies**. Then click the "Browse" tab and search for `Microsoft.ML.OnnxTransformer`. Make sure to install version **1.5.1**.
 
-Alternately if you prefer working from the command line, you can run this command from the *src/Shared* folder:
+Alternately if you prefer working from the command line, you can run this command from the *src/ONNXConsole* folder:
 
 ```dotnetcli
 dotnet add package Microsoft.ML.OnnxTransformer -v 1.5.1
