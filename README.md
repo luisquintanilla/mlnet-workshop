@@ -10,12 +10,13 @@ In this workshop, we will build, train, and consume a machine learning model tha
 
 ## Project Structure
 
-This app is made up of three projects:
+This app is made up of five projects:
 
-1. **Shared**: .NET Standard library that has shared code
-2. **TrainConsole**: .NET Core console app for training the model
-3. **Web**: ASP.NET Core Razor Pages app that uses the model to predict car prices
-
+1. **Shared**: C# .NET Standard library that has shared code
+1. **TrainConsole**: C# .NET Core console appplication for training a regression model to predict the price of a car.
+1. **Web**: ASP.NET Core Razor Pages app that uses the model to predict car prices
+1. **ImageTrainConsole**: C# .NET Core console application for training a deep learning model to classify images of car damage.
+1. **ONNXConsole**: C# .NET Core console application to build a pipeline that uses an ONNX model from Azure Custom Vision to detect car damage.
 
 ## Getting Started
 
