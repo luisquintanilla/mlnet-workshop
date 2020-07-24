@@ -10,13 +10,15 @@ In this workshop, we will build, train, and consume a machine learning model tha
 
 ## Project Structure
 
-This app is made up of five projects:
+This app is made up of seven projects:
 
 1. **Shared**: C# .NET Standard library that has shared code
 1. **TrainConsole**: C# .NET Core console appplication for training a regression model to predict the price of a car.
 1. **Web**: ASP.NET Core Razor Pages app that uses the model to predict car prices
 1. **ImageTrainConsole**: C# .NET Core console application for training a deep learning model to classify images of car damage.
 1. **ONNXConsole**: C# .NET Core console application to build a pipeline that uses an ONNX model from Azure Custom Vision to detect car damage.
+1. **DataTests**: .NET Core MSTest application to run data validation tests.
+1. **ModelTests**: .NET Core MSTest application to run ML.NET model validation tests.
 
 ## Getting Started
 
@@ -38,10 +40,3 @@ Go ahead and clone this repo to your machine, then dive in and [get started](/la
 | [Phase #9](/labs/09-dataframe.md) | Explore data with the .NET DataFrame API |
 | [Phase #10](/labs/10-deep-learning.md) | Train a deep learning image classification model |
 | [Phase #11](/labs/11-onnx.md) | Use an object detection ONNX model from Azure Custom Vision |
-
-
-## Additional Scenarios 
-
-| Scenario | Topics |
-| ----- | ---- |
-| [Deep Learning](/additional-scenarios/deep-learning.md) | Learn about deep learning, build an image classification model |
