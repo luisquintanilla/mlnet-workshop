@@ -12,5 +12,6 @@ namespace Web.Models
         public string Make { get; set; }
         public string Model { get; set; }
         public float Price { get; set; }
+        public string Base64Image { get; set; }
     }
 }

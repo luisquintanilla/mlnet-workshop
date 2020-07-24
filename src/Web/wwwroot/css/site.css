@@ -7,16 +7,27 @@ body {
     background-color: #6782B4
 }
 
+.container {
+    max-width: 1350px;
+}
 
 .form-container {
     background: #FFFFFF;
-    width: 540px;
-    height: 420px;
+    width: 640px;
+    height: 480px;
     margin: 0 auto;
     position: relative;
-    margin-top: 10%;
+    margin-top: 15%;
     box-shadow: 2px 5px 20px #777777;
     padding: 10px;
+    float: left
+}
+
+.car-image {
+    width: 640px;
+    height: 480px;
+    margin-top: 15%;
+    margin-left: 10px;
 }
 
 .form-container > * {
