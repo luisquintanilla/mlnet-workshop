@@ -26,8 +26,6 @@ namespace Web.Pages
         private readonly ILogger<IndexModel> _logger;
 
         private readonly IEnumerable<CarModelDetails> _carModelService;
-        private readonly int _imageHeight = 480;
-        private readonly int _imageWidth = 640;
 
         public bool ShowPrice { get; private set; } = false;
         public bool ShowImage { get; private set; } = false;
@@ -75,51 +73,12 @@ namespace Web.Pages
             ShowPrice = true;
         }
 
-        private Image ResizeImage(MemoryStream imageStream)
-        {
-            // Create image from stream 
-            using (var img = Image.FromStream(imageStream))
-            {
-                // Get original image dimensions
-                int originalWidth = img.Width;
-                var originalHeight = img.Height;
-
-                // Preserve aspect ratio
-                float ratioX = (float)_imageWidth / (float)originalWidth;
-                float ratioY = (float)_imageHeight / (float)originalHeight;
-                float ratio = Math.Min(ratioX, ratioY);
-
-                float originalRatio = (float)originalWidth / originalHeight;
-
-                // New width and height based on aspect ratio
-                int resizedWidth = (int)(originalWidth * ratio);
-                int resizedHeight = (int)(originalHeight * ratio);
-
-                //Resize image
-                Image resizedImage = new Bitmap(resizedHeight, resizedWidth);
-                using (Graphics g = Graphics.FromImage(resizedImage))
-                {
-                    g.CompositingQuality = CompositingQuality.HighQuality;
-                    g.InterpolationMode = InterpolationMode.HighQualityBicubic;
-                    g.SmoothingMode = SmoothingMode.HighQuality;
-                    g.DrawImage(img, 0, 0, resizedHeight, resizedWidth);
-                }
-
-                // Write resized image to memory stream
-                resizedImage.Save(imageStream, ImageFormat.Jpeg);
-                return resizedImage;
-            }
-        }
-
         private async Task ProcessUploadedImageAsync(IFormFile uploadedImage)
         {
             using (var ms = new MemoryStream())
             {
                 //Copy image to memory stream
                 await uploadedImage.CopyToAsync(ms);
-
-                // Resize Image
-                var img = ResizeImage(ms);
 
                 // Convert image to base64 string
                 var base64Image = Convert.ToBase64String(ms.ToArray());

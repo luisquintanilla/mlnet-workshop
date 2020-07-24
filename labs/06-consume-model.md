@@ -72,8 +72,9 @@ private readonly PredictionEnginePool<ModelInput, ModelOutput> _pricePredictionE
 Then, inject the `PredictionEnginePool` service into the `Index` constructor.
 
 ```csharp
-public IndexModel(ILogger<IndexModel> logger, ICarModelService carFileModelService, PredictionEnginePool<ModelInput,ModelOutput> pricePredictionEnginePool)
+public IndexModel(IWebHostEnvironment env, ILogger<IndexModel> logger, ICarModelService carFileModelService, PredictionEnginePool<ModelInput,ModelOutput> pricePredictionEnginePool)
 {
+    _env = env;
     _logger = logger;
     _carModelService = carFileModelService.GetDetails();
     CarMakeSL = new SelectList(_carModelService, "Id", "Model", default, "Make");
