@@ -13,14 +13,14 @@ In this session, you'll add an `MLContext` to the `TrainConsole` project. `MLCon
 
 ## Install the ML.NET Nuget Package
 
-First, we need to add the ML.NET NuGet package to the `Shared` project. If you're using Visual Studio, right click on the project name and select **Manage NuGet Dependencies**. Then click the "Browse" tab and search for `Microsoft.ML`. Make sure to install version **1.5.0**.
+First, we need to add the ML.NET NuGet package to the `Shared` project. If you're using Visual Studio, right click on the project name and select **Manage NuGet Dependencies**. Then click the "Browse" tab and search for `Microsoft.ML`. Make sure to install version **1.5.1**.
 
-![Install Microsoft.ML NuGet package](./media/install-microsoft-ml-nuget.png)
+![Install Microsoft.ML NuGet package](https://user-images.githubusercontent.com/46974588/88368460-20d90400-cd5c-11ea-9327-06d49eecb82e.png)
 
 Alternately if you prefer working from the command line, you can run this command from the *src/Shared* folder:
 
 ```powershell
-dotnet add package Microsoft.ML -v 1.5.0
+dotnet add package Microsoft.ML -v 1.5.1
 ```
 
 ## Initialize MLContext
@@ -41,6 +41,6 @@ static void Main(string[] args)
 }
 ```
 
-![Add MLContext](./media/add-ml-context.png)
+![Add MLContext](https://user-images.githubusercontent.com/46974588/88368540-50880c00-cd5c-11ea-90e9-15a6e73081a9.png)
 
 At this point we're not yet ready to work with the `MLContext`, but you should be able to successfully build the application once more.
