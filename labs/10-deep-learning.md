@@ -76,6 +76,10 @@ Create a new class in the `Shared` project called `ImageModelInput`. This class 
 
 Start by adding the following `using` statement:
 
+```csharp
+using Microsoft.ML.Data;
+```
+
 Then, define the class as follows:
 
 ```csharp
@@ -372,7 +376,7 @@ Once you're satisfied with your model, save it to your PC.
 Inside of the *Program* class definition of the `ImageTrainConsole` project, add the path where you want to save your model to. The model is serialized and stored as a `.zip` file. In this case, the model will be saved to a file called *ImageModel.zip*.
 
 ```csharp
-private static string MODEL_SAVE_PATH = @"C:\Dev\ImageModel.zip";
+private static string MODEL_FILEPATH = @"C:\Dev\ImageModel.zip";
 ```
 
 Then, inside the `Main` method, add the following code at the bottom:
@@ -384,6 +388,8 @@ Console.WriteLine("Saved image classification model");
 ```
 
 ![Save image classification model](https://user-images.githubusercontent.com/46974588/88378946-fc872280-cd6f-11ea-8b1a-e5f3204c06aa.png)
+
+Set the startup project to `ImageTrainConsole` and run the application.
 
 Congratulations! You have now trained a custom image classification model with ML.NET.
 

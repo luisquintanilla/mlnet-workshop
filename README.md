@@ -6,7 +6,7 @@ Welcome to the ML.NET Workshop!
 
 In this workshop, we will build, train, and consume a machine learning model that predicts the price of used cars based on factors such as car make, model, and mileage. We will also learn about the basics of machine learning, the various ML.NET framework features and tooling, and how to easily get started with ML.NET.
 
-![Used Car Price](labs/media/consume-model.png)
+![Used Car Price](https://user-images.githubusercontent.com/46974588/88401414-b940aa00-cd97-11ea-9388-468b024e733f.png)
 
 ## Project Structure
 
