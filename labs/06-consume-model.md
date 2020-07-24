@@ -119,6 +119,6 @@ In the snippet above, the information from the `CarInfo` model is taken and a ne
 
 Set the startup project to `Web` and run the application. Fill in the form fields and select **Predict Price**.
 
-![Consume the model in web app](https://user-images.githubusercontent.com/46974588/88373214-6c43e000-cd65-11ea-8505-45884016275b.png)
+![Consume the model in web app](https://user-images.githubusercontent.com/46974588/88406656-f9575b00-cd9e-11ea-9481-0c574822e950.png)
 
 Congratulations! You have now used the model inside your web application.

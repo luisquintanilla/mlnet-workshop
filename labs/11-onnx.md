@@ -557,6 +557,14 @@ Then, the price of the car is displayed on screen.
 
 Set the startup project to `Web` and run the application. Fill in the form fields and select **Predict Price**.
 
+Compared with the original application which did not use object detection, we can see that the original price of $13806 is reduced to $13706 because of the dent.
+
+**No object detection**
+![Consume price prediction model in web app](https://user-images.githubusercontent.com/46974588/88406656-f9575b00-cd9e-11ea-9481-0c574822e950.png)
+
+**Object detection**
 ![Consume both ONNX and price prediction models in web app](https://user-images.githubusercontent.com/46974588/88401414-b940aa00-cd97-11ea-9388-468b024e733f.png)
+
+
 
 Congratulations! You have now used both the price prediction and object detection ONNX models inside your web application.
