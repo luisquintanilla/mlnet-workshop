@@ -42,10 +42,10 @@ using Microsoft.Extensions.ML;
 using Shared;
 ```
 
-Then, in the `ConfigureServices` method, register the `PredictionEnginePool` service and use the path of where you saved your model.
+Then, in the `ConfigureServices` method, register a `PredictionEnginePool` service. Give it a unique and descriptive name so that you are able to differentiate it from other models and provide the path where you saved your model to.
 
 ```csharp
-services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromFile(@"C:\Dev\MLModel.zip");
+services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromFile(modelName:"PricePrediction",filePath:@"C:\Dev\MLModel.zip");
 ```
 
 In this case, the model was loaded from a file, but you can also load models stored remotely via publicly accessible endpoints using the `FromUri` method.
@@ -64,18 +64,18 @@ using Shared;
 Inside the class, define a private readonly variable for the `PredictionEnginePool` service.
 
 ```csharp
-private readonly PredictionEnginePool<ModelInput, ModelOutput> _predictionEnginePool;
+private readonly PredictionEnginePool<ModelInput, ModelOutput> _pricePredictionEnginePool;
 ```
 
 Then, inject the `PredictionEnginePool` service into the `Index` constructor.
 
 ```csharp
-public IndexModel(ILogger<IndexModel> logger, ICarModelService carFileModelService, PredictionEnginePool<ModelInput,ModelOutput> predictionEnginePool)
+public IndexModel(ILogger<IndexModel> logger, ICarModelService carFileModelService, PredictionEnginePool<ModelInput,ModelOutput> pricePredictionEnginePool)
 {
     _logger = logger;
     _carModelService = carFileModelService.GetDetails();
     CarMakeSL = new SelectList(_carModelService, "Id", "Model", default, "Make");
-    _predictionEnginePool = predictionEnginePool;
+    _pricePredictionEnginePool = pricePredictionEnginePool;
 }
 ```
 
@@ -97,7 +97,7 @@ public void OnPost()
         Model = CarInfo.Model
     };
 
-    ModelOutput prediction = _predictionEnginePool.Predict(input);
+    ModelOutput prediction = _pricePredictionEnginePool.Predict(modelName: "PricePrediction", example: );
     CarInfo.Price = prediction.Score;
     ShowPrice = true;
 }

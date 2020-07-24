@@ -178,7 +178,7 @@ The `PredictionEnginePool` is designed for use with dependency injection which i
 
 In the *src/Web* project, open the *Startup.cs* file.
 
-Then, in the `ConfigureServices` method, register the `PredictionEnginePool` service. Give it a unique and descriptive name so that you are able to differentiate it from other models and provide the path where you saved your pipeline to.
+Then, in the `ConfigureServices` method, register a `PredictionEnginePool` service. Give it a unique and descriptive name so that you are able to differentiate it from other models and provide the path where you saved your pipeline to.
 
 ```csharp
 services.AddPredictionEnginePool<ONNXInput, ONNXOutput>().FromFile(modelName:"DamageDetection",filePath:@"C:/Dev/ONNXModel.zip");
