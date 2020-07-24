@@ -13,7 +13,7 @@ The evaluation metric used to measure model performance depends on the task. The
 - Squared-Loss (closer to 0 is better)
 - RMS-loss (closer to 0 is better)
 
-Learn more about [model evaluation metrics](https://docs.microsoft.com/dotnet/machine-learning/resources/metrics).
+Learn more about [regression evaluation metrics](https://docs.microsoft.com/dotnet/machine-learning/resources/metrics#evaluation-metrics-for-regression-and-recommendation).
 
 To get the evaluation metrics for the model, start out by using the model to make predictions with the `Transform` method. In the `Main` method of the *Program.cs* file of the `TrainConsole` project, add the following code below `model`.
 
@@ -39,7 +39,7 @@ Finally, print out the metrics out to the console.
 Console.WriteLine($"Train Set R-Squared: {trainSetMetrics.RSquared} | Test Set R-Squared {testSetMetrics.RSquared}");
 ```
 
-![Evaluate the model](./media/evaluate-model.png)
+![Evaluate the model](https://user-images.githubusercontent.com/46974588/88370433-04d76180-cd60-11ea-8925-e4adf7ef53ea.png)
 
 Set the startup project to *TrainConsole* and run the application. The result should look something like the output below:
 
@@ -62,6 +62,7 @@ using System.Linq;
 ```
 
 ```csharp
+// (Optional) Train and evaluate the model using cross-validation and print out average R-Squared metric
 var crossValidationResults = mlContext.Regression.CrossValidate(trainingData, trainingPipeline, numberOfFolds: 5);
 var avgRSquared = crossValidationResults.Select(model => model.Metrics.RSquared).Average();
 Console.WriteLine($"Cross Validated R-Squared: {avgRSquared}");
@@ -69,7 +70,7 @@ Console.WriteLine($"Cross Validated R-Squared: {avgRSquared}");
 
 When using cross validation, because the data is automatically partitioned for you, there's no need to split into train and test sets (although you can if you want to). In the previous example, the data is partitioned into 5 folds. The overall accuracy of the models is measured by looking at the average metrics (in this case R-Squared).
 
-Set the startup project to *TrainConsole* and run the application. The result should look similar to the output below:
+Set the startup project to **TrainConsole** and run the application. The result should look similar to the output below:
 
 ```text
 Cross Validated R-Squared: 0.8736620547207405

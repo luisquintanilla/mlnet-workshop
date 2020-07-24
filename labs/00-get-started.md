@@ -17,22 +17,20 @@ In this section you'll set up your environment to build machine learning applica
 - [.NET Core 3.1 SDK](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 - [ML.NET CLI](https://www.nuget.org/packages/MLNet/)
 - [Visual Studio Code (Optional)](https://code.visualstudio.com/Download)
-- [.NET Core 2.1 SDK](https://aka.ms/download-netcore-21)
 
 ### Fork the repo
 
 We've set up an initial project for you to start from. To get started, please complete the following steps:
 - Fork the repo (top right-corner)
-- Clone your forked repo locally, e.g. by running the following command (replace luisquintanilla with your GitHub username)
+- Clone your forked repo locally, e.g. by running the following command **(replace luisquintanilla with your GitHub username)**
+
 ```powershell
 git clone https://github.com/luisquintanilla/mlnet-workshop
 ```
 
 Once you've done this, change directories to the *mlnet-workshop/src* folder where you'll find the *MLNETWorkshop.sln* file. Open the solution. You should see three projects, similar to what's shown here:
 
-![](./media/project-structure.png)
-
-<!-- ![solution explorer](https://user-images.githubusercontent.com/782127/82521002-7e01d080-9af3-11ea-85bf-a2c5c7da7b4d.png) -->
+![ML.NET Workshop Project Structure](https://user-images.githubusercontent.com/46974588/88367922-eae75000-cd5a-11ea-8260-04ee84f749c6.png)
 
 ## Build the application
 

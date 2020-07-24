@@ -18,6 +18,6 @@ Console.WriteLine("Saving model...");
 mlContext.Model.Save(model, trainingData.Schema, MODEL_FILEPATH);
 ```
 
-![Save the model](./media/save-model.png)
+![Save the model](https://user-images.githubusercontent.com/46974588/88371200-93001780-cd61-11ea-97e9-7fb5eabb1e94.png)
 
 Run the application. Navigate to the directory where you saved your model and make sure that the file is there. Once you've saved your model, you can consume it in another application (Desktop, Web, Mobile).
