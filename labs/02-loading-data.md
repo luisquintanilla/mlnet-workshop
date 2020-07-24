@@ -68,7 +68,7 @@ public class ModelInput
 }
 ```
 
-![Define model input schema](./media/define-modelinput-schema.png)
+![Define model input schema](https://user-images.githubusercontent.com/46974588/88369102-4c102300-cd5d-11ea-82ac-d3ddf766bd45.png)
 
 > Note that not all columns are loaded. Each `LoadColumn` attribute specifies the index of its respective column within the file. The `ColumnName` attribute tells the `IDataView` to identify the `Price` property by the `Label` column. The ground-truth values or the value to predict is known as the **label**. Since we want to be able to predict the price, we treat that as the label. The rest of the columns or inputs are known as **features**. Learn more about [data annotations](https://docs.microsoft.com/dotnet/machine-learning/how-to-guides/load-data-ml-net#annotating-the-data-model-with-column-attributes) and [expected column types](https://docs.microsoft.com/dotnet/machine-learning/how-to-guides/train-machine-learning-model-ml-net#working-with-expected-column-types).
 
@@ -99,5 +99,7 @@ Next, in the `Main` method, add this block of code after `mlContext`:
 Console.WriteLine("Loading data...");
 IDataView trainingData = mlContext.Data.LoadFromTextFile<ModelInput>(path: TRAIN_DATA_FILEPATH, hasHeader: true, separatorChar: ',');
 ```
+
+![Load training data](https://user-images.githubusercontent.com/46974588/88369557-449d4980-cd5e-11ea-813a-2ab391e64c8f.png)
 
 At this point, you have defined how to load data into an `IDataView` with a `ModelInput` schema. It's important to remember though that an `IDataView` is lazy and no loading takes place at this stage. We'll explore that in the following section. You're now ready to define the set of data transformations and algorithms used to train your machine learning model.
