@@ -69,6 +69,6 @@ Console.WriteLine("Training model...");
 var model = trainingPipeline.Fit(trainTestSplit.TrainSet);
 ```
 
-![Train the model](./media/train-model.png)
+![Train the model](https://user-images.githubusercontent.com/46974588/88370144-74008600-cd5f-11ea-8273-b41dc580517f.png)
 
 Once we've set up our model, the next step is to test it and see how it performs.
