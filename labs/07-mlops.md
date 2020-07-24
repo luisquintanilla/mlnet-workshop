@@ -3,8 +3,8 @@
 In this section you will learn how to automate the model lifecycle from training to model deployment. 
 We will in addition look at some additional considerations such as data and model tests.
 
-
 ## Phase 7.1: Create our first GitHub Action workflow
+
 The first thing we want to do is to create a simple GitHub Action workflow which will be triggered to train a new model when a commit is pushed to our repository.
 
 To do so, navigate to your forked repo and click on the `Actions` tab
@@ -15,7 +15,7 @@ GitHub will provide you with a template workflow that is intended to restore, bu
 
 Replace the workflow file with the following content and commit it to your master branch.
 
-```
+```yaml
 name: .NET Core
 
 on:
@@ -29,12 +29,12 @@ jobs:
 
     runs-on: ubuntu-latest
 
-    steps:        
+    steps:
     - uses: actions/checkout@v2
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 3.1.101   
+        dotnet-version: 3.1.101
     - name: Install dependencies
       run: dotnet restore src/MLNETWorkshop.sln
     - name: Build
@@ -75,7 +75,7 @@ Commit the changes to your master branch and push the changes to your repo.
 To mount the fileshare as part of our workflow, open the `dotnet-core.yml' file located under `.github/workflows in your repo. 
 Add the following just before the `Install dependencies` step and commit and push the changes to your master branch.
 
-```
+```yaml
  - name: 'Create mount points'
       run: 'sudo mkdir /media/data'
     - name: 'Map disk drive to Azure Files share folder'
@@ -84,7 +84,7 @@ Add the following just before the `Install dependencies` step and commit and pus
 
 Your complete `dotnet-core.yml` file should now look like:
 
-```
+```yaml
 name: .NET Core
 
 on:
@@ -321,7 +321,7 @@ In this instance, we would like to run three tests on our model to ensure that i
 
 To do so, replace the content of the `ModelTests` class with the following:
 
-```yaml
+```csharp
 [TestMethod]
 public void Given_LowRangeCar_ShouldEstimatePriceWithinRange()
 {
@@ -544,4 +544,3 @@ To ensure that we are able to use the model now stored in the Azure Storage Acco
 ![Consume the model in web app](./media/consume-model.png)
 
 Congratulations! You have now mastered the art of MLOps.
-
