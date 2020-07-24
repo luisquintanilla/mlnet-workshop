@@ -8,14 +8,14 @@ One of the advantages of ML.NET is you have different deployment targets. Perhap
 
 ## Install Microsoft.Extensions.ML package
 
-Install the `Microsoft.Extensions.ML` NuGet package to the `Web` project. Make sure to select version **1.5.0**.
+Install the `Microsoft.Extensions.ML` NuGet package to the `Web` project. Make sure to select version **1.5.1**.
 
-![Install Microsoft.Extensions.ML NuGet package](./media/install-microsoftextensionsml-nuget.png)
+![Install Microsoft.Extensions.ML NuGet package](https://user-images.githubusercontent.com/46974588/88371701-8af4a780-cd62-11ea-9b91-484fcbb0f032.png)
 
 Alternatively, you can use the dotnet cli
 
 ```dotnetcli
-dotnet add package Microsoft.Extensions.ML -v 1.5.0
+dotnet add package Microsoft.Extensions.ML -v 1.5.1
 ```
 
 During evaluation, we used the `Transform` method to make multiple predictions on the training and test dataset. The `Transform` method is a great way to make predictions on an entire `IDataView`. However, when you want to make a single prediction, you can use the `PredictionEngine` convenience API which takes in a single instance of an object used as your model's input. In this case, you can pass in a single `ModelInput` instance instead of having to create an `IDataView` for a single data point. A challenge with `PredictionEngine` though is that it's not thread-safe. As a result, when you want to scale `PredictionEngine` in multi-threaded environments, it's recommended that you use the `PredictionEnginePool` service that's part of the `Microsoft.Extensions.ML` NuGet package.
@@ -30,6 +30,8 @@ public class ModelOutput
     public float Score { get; set; }
 }
 ```
+
+![Define model output schema](https://user-images.githubusercontent.com/46974588/88371792-b5466500-cd62-11ea-856b-2baeb04ee854.png)
 
 ## Configure PredictionEnginePool service
 
@@ -50,7 +52,7 @@ services.AddPredictionEnginePool<ModelInput, ModelOutput>().FromFile(modelName:"
 
 In this case, the model was loaded from a file, but you can also load models stored remotely via publicly accessible endpoints using the `FromUri` method.
 
-![Register PredictionEnginePool service in Startup](./media/register-predictionenginepool-service.png)
+![Register PredictionEnginePool service in Startup](https://user-images.githubusercontent.com/46974588/88372276-8f6d9000-cd63-11ea-8b4e-9d4f4c9509a4.png)
 
 ## Add PreditionEnginePool to Index PageModel
 
@@ -82,7 +84,7 @@ public IndexModel(ILogger<IndexModel> logger, ICarModelService carFileModelServi
 Finally, replace the implementation of the `OnPost` method with the following.
 
 ```csharp
-public void OnPost()
+public async Task OnPostAsync()
 {
     var selectedMakeModel = _carModelService.Where(x => CarModelDetailId == x.Id).FirstOrDefault();
 
@@ -97,8 +99,15 @@ public void OnPost()
         Model = CarInfo.Model
     };
 
-    ModelOutput prediction = _pricePredictionEnginePool.Predict(modelName: "PricePrediction", example: );
+    ModelOutput prediction = _pricePredictionEnginePool.Predict(modelName: "PricePrediction", example: input);
     CarInfo.Price = prediction.Score;
+
+    if(ImageUpload != null)
+    {
+        await ProcessUploadedImageAsync(ImageUpload);
+        ShowImage = true;
+    }
+
     ShowPrice = true;
 }
 ```
@@ -109,6 +118,6 @@ In the snippet above, the information from the `CarInfo` model is taken and a ne
 
 Set the startup project to `Web` and run the application. Fill in the form fields and select **Predict Price**.
 
-![Consume the model in web app](./media/consume-model.png)
+![Consume the model in web app](https://user-images.githubusercontent.com/46974588/88372905-d445f680-cd64-11ea-98b2-eb5857cc593d.png)
 
 Congratulations! You have now used the model inside your web application.
