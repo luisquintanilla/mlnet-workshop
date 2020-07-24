@@ -4,7 +4,7 @@ In this section you'll set up your environment to build machine learning applica
 
 ## Requirements
 
-- [Git(Optional)](https://git-scm.com/)
+- [Git](https://git-scm.com/)
 - GitHub account 
 
 ### Windows
