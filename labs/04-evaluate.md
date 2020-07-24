@@ -62,6 +62,7 @@ using System.Linq;
 ```
 
 ```csharp
+// (Optional) Train and evaluate the model using cross-validation and print out average R-Squared metric
 var crossValidationResults = mlContext.Regression.CrossValidate(trainingData, trainingPipeline, numberOfFolds: 5);
 var avgRSquared = crossValidationResults.Select(model => model.Metrics.RSquared).Average();
 Console.WriteLine($"Cross Validated R-Squared: {avgRSquared}");
