@@ -6,7 +6,7 @@ This section will use a C# notebook that was created in the previous section.
 
 ## Phase 9.1: Install the DataFrame API in a Notebook
 
-The DataFrame API is a [NuGet package]() that you can download and start using. To install it in a C# Jupyter notebook, use the below command:
+The DataFrame API is a [NuGet package](https://www.nuget.org/packages/Microsoft.Data.Analysis/) that you can download and start using. To install it in a C# Jupyter notebook, use the below command:
 
 ```bash
 #r "nuget:Microsoft.Data.Analysis"
@@ -159,7 +159,7 @@ In another cell, run the `mileage` variable to get a view of the data.
 
 ## Phase 9.9: Visualizing the Data
 
-Chances are that there will be too much data in the dataset to manually go through and see any insights from it. Visualization helps in this case. We can make plots of the data in our notebook by using the [XPlot]() package. However, there is no need to get this from NuGet since it is included with .NET Interactive. Since it was referenced earlier in phase 9.2 we can start using it.
+Chances are that there will be too much data in the dataset to manually go through and see any insights from it. Visualization helps in this case. We can make plots of the data in our notebook by using the [XPlot.Plotly](https://www.nuget.org/packages/XPlot.Plotly) package. However, there is no need to get this from NuGet since it is included with .NET Interactive. Since it was referenced earlier in phase 9.2 we can start using it.
 
 In a new cell, use the below code to plot a histogram of the "Price" column.
 
