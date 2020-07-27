@@ -2,6 +2,8 @@
 
 In this section, you will learn how to use C# within a Jupyter Notebook environment.
 
+[Jupyter](https://jupyter.org/) is an open-source web application that allows for interactive programming. It can contain code, visualizations, and text.
+
 ## Phase 8.1: Installing Python and Jupyter
 Using Jupyter notebooks requires you to have Python and Jupyter installed. To get both, download [Anaconda](https://www.anaconda.com/products/individual). It is recommended to get the latest download of version 3. Version 2.7 of Python will no longer have any updates to it.
 
