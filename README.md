@@ -22,21 +22,4 @@ This app is made up of seven projects:
 
 ## Getting Started
 
-Go ahead and clone this repo to your machine, then dive in and [get started](/labs/00-get-started.md)!
-
-## Phases
-
-| Phase | Topics |
-| ----- | ---- |
-| [Phase #0](/labs/00-get-started.md) | Get bits installed and set up your environment |
-| [Phase #1](/labs/01-add-ml-context.md) | Install the ML.NET NuGet package, initialize an ML.NET environment |
-| [Phase #2](/labs/02-loading-data.md) | Load data for training  |
-| [Phase #3](/labs/03-training.md) | Choose data transforms and algorithms, train the model |
-| [Phase #4](/labs/04-evaluate.md) | Evaluate model performance |
-| [Phase #5](/labs/05-save-model.md) | Save the ML.NET model |
-| [Phase #6](/labs/06-consume-model.md) | Consume the model in a web app |
-| [Phase #7](/labs/07-mlops.md) | Automate the ML Lifecycle with MLOps |
-| [Phase #8](/labs/08-jupyter.md) | Set up .NET Interactive kernel for Jupuyter notebooks |
-| [Phase #9](/labs/09-dataframe.md) | Explore data with the .NET DataFrame API |
-| [Phase #10](/labs/10-deep-learning.md) | Train a deep learning image classification model |
-| [Phase #11](/labs/11-onnx.md) | Use an object detection ONNX model from Azure Custom Vision |
+Go ahead and clone this repo to your machine, then dive in and [get started](https://aka.ms/mlnet-workshop-content)!
