@@ -1,4 +1,4 @@
-# Phase 1.2: Challenge
+# ML.NET Challenge
 
 You'll have 3 minutes to create a Machine Learning model that classifies e-commerce products into categories.
 
